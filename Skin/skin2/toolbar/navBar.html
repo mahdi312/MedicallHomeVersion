@@ -1,7 +1,7 @@
 <div oc-lazy-load="{ name: 'YourApp', files: [skinPath+'js/sideNav.js?r='+rand] }">
 	<div ng-controller="sidenavCtrl">
-		<md-sidenav md-component-id="app-side-left" layout="column" class="md-whiteframe-z1">
-			<md-toolbar layout="column">
+		<md-sidenav style="width: 217px;" class="md-sidenav-right" md-component-id="right" layout="column">
+			<md-toolbar>
 				<div class="sideVavBox" layout="row" layout-align="space-around center">
 					<!--logo-->		
 						<div ng-include="skinPath+'toolbar/logo.html?r='+rand"></div>
@@ -27,9 +27,9 @@
 			</div-->
 			<!---->
 			<!-- BEGIN LEFT SIDE NAVIGATION -->
-			<md-content flex role="navigation" class="whiteTxtToolbar sideVavBox">
-				<ul class="docs-menu">
-					<!-- SHIPPING MENU OPTION -->
+			<md-content style="background: #444444;" flex role="navigation" class="whiteTxtToolbar sideVavBox">
+				<div ng-include="'Content/'+dashboardParam[dashboardName].sideNavPageContentId+'.html'"></div>
+				<!--ul class="docs-menu">
 					<li class="parent-list-item">
 					  <md-button class="md-button-toggle">
 						<div flex layout="row">
@@ -39,56 +39,7 @@
 						</div>
 					  </md-button>
 					</li>
-					<!-- DOCUMENTS MENU OPTION -->
-					<li class="parent-list-item">
-					  <md-button class="md-button-toggle">
-						<div flex layout="row">
-						  <md-icon class="toolbarIcons">find_in_page</md-icon>
-						  FIND A PHYSICIAN
-						  <span flex></span>
-						</div>
-					  </md-button>
-					</li>
-					<!--My Appointments-->
-					<li class="parent-list-item">
-					  <md-button class="md-button-toggle">
-						<div flex layout="row">
-						  <md-icon class="toolbarIcons">timer</md-icon>
-						  MY APPOINTMENTS
-						  <span flex></span>
-						</div>
-					  </md-button>
-					</li>
-					<!-- ELECTRONIC LIENS MENU OPTION -->
-					<li class="parent-list-item">
-					  <md-button class="md-button-toggle">
-						<div flex layout="row">
-						  <md-icon class="toolbarIcons">import_export</md-icon>
-						  SETTING
-						  <span flex></span>
-						</div>
-					  </md-button>
-					</li>
-					<!---->
-					<li class="parent-list-item">
-						<md-button class="md-button-toggle">
-							<div flex layout="row">
-								<md-icon class="toolbarIcons">account_circle</md-icon>
-								MY ACCOUNT
-								<span flex></span>
-							</div>
-						</md-button>
-					</li>
-					<li class="parent-list-item">
-						<md-button class="md-button-toggle">
-							<div flex layout="row">
-								<md-icon class="toolbarIcons">keyboard_backspace</md-icon>
-								SIGN OUT
-								<span flex></span>
-							</div>
-						</md-button>
-					</li>
-				</ul>
+				</ul-->
 			</md-content>
 		</md-sidenav>
 	</div>
