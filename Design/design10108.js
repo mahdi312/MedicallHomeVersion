@@ -21,7 +21,7 @@ $rootScope.design_10108 = function($scope,param,$event){
 	$rootScope.globalEntity4.workplace.officeTel = $scope.Form.officeTel;
 	$rootScope.globalEntity4.workplace.officeFax = $scope.Form.officeFax;
 	
-	url= 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/membership/signup/doctor';
+	url= 'http://172.16.201.212:8081/rest/api/v1/membership/signup/doctor';
 	$scope.callBack_10108 = function(data){
 		localStorage.setItem("__localStorage.__token", data.jwt_token);
 		localStorage.setItem("__localStorage.__CLIENT_ID", data.client_id);

@@ -6,7 +6,7 @@ angular.module("APP").controller("Design_10100", ['$rootScope', '$scope', '$http
         $scope.nationalCode = localStorage.getItem("__localStorage.__nationalCode");
         $scope.objData = {};
         $scope.objData.input1 = $scope.nationalCode;
-        url = 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/validate/sms/send/confirm';
+        url = 'http://172.16.201.212:8081/rest/api/v1/validate/sms/send/confirm';
         $scope.callBack_10100 = function (data) {
             $rootScope.smsData = data.result;
             localStorage.setItem("__localStorage.__expirationTime", data.expiration_time);

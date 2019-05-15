@@ -7,7 +7,7 @@ $rootScope.design_20196 = function($scope,param,$event){
 	
 	$rootScope.mobileNo = {};
 	$rootScope.mobileNo.input = mobile ;
-	url= 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/validate/sms/send/confirm';
+	url= 'http://172.16.201.212:8081/rest/api/v1/validate/sms/send/confirm';
 	$scope.callBack_20196 = function(data){
 		$rootScope.smsData = data.result;
         localStorage.setItem("__localStorage.__expirationTime", data.expiration_time);

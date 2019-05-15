@@ -8,7 +8,7 @@ $rootScope.design_10117 = function($scope,param,$event){
 	$scope.patPassObj = {} ;
 	$scope.patPassObj.nationalCode = $scope.nationalCode;
 	$scope.patPassObj.password=$scope.Form.password;
-	url= 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/membership/patient/password/check';
+	url= 'http://172.16.201.212:8081/rest/api/v1/membership/patient/password/check';
 	$scope.callBack_10117 = function(data){
 		localStorage.setItem("__localStorage.__token" , data.jwt_token);
 		localStorage.setItem("__localStorage.__CLIENT_ID" , data.client_id);

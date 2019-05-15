@@ -10,7 +10,7 @@ $rootScope.design_10120 = function($scope,param,$event){
 		$scope.savePersonInfo.birthDate = $scope.DocInfo.person.birthDate;
 		$scope.savePersonInfo.gender = {};
 		$scope.savePersonInfo.gender.id = $scope.DocInfo.person.gender.id;
-	url= 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/account/patient/edit';
+	url= 'http://172.16.201.212:8081/rest/api/v1/account/patient/edit';
 	$scope.callBack_10120 = function(data){
 
         if (data.mdc_error_code == -1) {

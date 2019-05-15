@@ -1,10 +1,13 @@
 <div flex="100"
-     oc-lazy-load="{name:'myApp',files:['Content/190495.js?r=1453752686','Design/design10108.js?r=683224758','Design/design10160.js?r=2060180477','Design/design10123.js?r=2060180477','scripts/ngMask.min.js','scripts/md-input.css']}">
+     oc-lazy-load="{name:'myApp',files:['Content/190495.js?r=1453752686','Design/design20209.js?r=1746330182','Design/design20200.js?r=1746330182','Design/design10108.js?r=683224758','Design/design10160.js?r=2060180477','Design/design10123.js?r=2060180477','scripts/ngMask.min.js','scripts/md-input.css']}">
     <div ng-controller="Design_10108"></div>
     <div ng-controller="Design_10160"></div>
     <div ng-controller="Design_10123"></div>
+    <div ng-controller="Design_20200"></div>
+    <div ng-controller="Design_20209"></div>
 
     <div ng-controller="Ctrl190495">
+
         <form id="formData" name="formData" layout-padding style="width: 750px">
             <div layout="column" style="margin :0 auto">
                 <div layout="row" layout-align="center center">
@@ -17,7 +20,6 @@
                 </div>
                 <div layout="row" layout-align="center center">
                     <div style="text-align: center ; font-size: small ; padding: 0px;">
-                        <span style="color: #00C6D7;">{{'DEAR_USER' | translate}}</span>
                         <span>{{'PLEASE_ENTER_YOUR_WORKPLACE_INFORMATION' | translate}}</span>
                     </div>
                 </div>
@@ -35,7 +37,9 @@
                     </md-input-container>
                     <md-input-container flex="45" class="margin-padding-zero"  >
                         <md-icon>local_post_office</md-icon>
-                        <input ng-model="Form.postalCode"
+                        <input
+                                ng-init="docInfo.address.postalCode"
+                                ng-model="Form.postalCode"
                                ng-pattern="/^[13-9]*$/"
                                minlength="10"
                                md-minlength="10"
@@ -44,7 +48,11 @@
                                name="postalCode"
                                required
                                valid-number>
-                        <label>{{'WORKPLACE_POSTAL_CODE'| translate }}</label>
+                        <label ng-if="Form.addressType==null">{{'WORKPLACE_POSTAL_CODE'| translate }}</label>
+                        <label ng-if="Form.addressType==19">{{'OFFICE_POSTAL_CODE'| translate }}</label>
+                        <label ng-if="Form.addressType==21">{{'CLINIC_POSTAL_CODE'| translate }}</label>
+                        <label ng-if="Form.addressType==22">{{'HOSPITAL_POSTAL_CODE'| translate }}</label>
+                        <label ng-if="Form.addressType==23">{{'DOCTORS_BUILDING_POSTAL_CODE'| translate }}</label>
                         <div class="hint">{{'' | translate }}</div>
                         <div ng-messages="formData.postalCode.$error" role="alert">
                             <div ng-message="required" class="my-message">
@@ -64,8 +72,11 @@
                         <md-icon>location_city</md-icon>
                         <md-select required
                                    md-on-open="getDynamicData('__cityList','','0','/base/list/city','city',[],this)"
-                                   ng-model="Form.city" placeholder="{{'CITY' | translate}}">
-                            <md-option ng-repeat="item in __cityList" value="{{item.id}}">
+                                   ng-model="Form.city"
+                                   placeholder="{{'CITY' | translate}}">
+                            <md-option
+                                    ng-repeat="item in __cityList"
+                                       value="{{item.id}}">
                                 {{item.name}}
                             </md-option>
                         </md-select>
@@ -80,17 +91,21 @@
                                md-maxlength="100"
                                name="address"
                                required>
-                        <label>{{'WORKPLACE_MAIN_ADDRESS'| translate }}</label>
+                        <label ng-if="Form.addressType==null">{{'WORKPLACE_MAIN_ADDRESS'| translate }}</label>
+                        <label ng-if="Form.addressType==19">{{'OFFICE_MAIN_ADDRESS'| translate }}</label>
+                        <label ng-if="Form.addressType==21">{{'CLINIC_MAIN_ADDRESS'| translate }}</label>
+                        <label ng-if="Form.addressType==22">{{'HOSPITAL_MAIN_ADDRESS'| translate }}</label>
+                        <label ng-if="Form.addressType==23">{{'DOCTORS_BUILDING_MAIN_ADDRESS'| translate }}</label>
                         <div class="hint">{{'' | translate }}</div>
                         <div ng-messages="formData.address.$error" role="alert">
                             <div ng-message="required" class="my-message">
-                                {{ 'MANDATORY_ADDRESS_IS_REQUIRED' | translate }}
+                                {{ 'WORKPLACE_ADDRESS_IS_REQUIRED' | translate }}
                             </div>
                             <div ng-message="maxlength" class="my-message">
-                                {{ 'MANDATORY_ADDRESS_MUST_BE_LESS_THAN_100_CHARS' | translate }}
+                                {{ 'WORKPLACE_ADDRESS_MUST_BE_LESS_THAN_100_CHARS' | translate }}
                             </div>
                             <div ng-message="minlength" class="my-message">
-                                {{ 'MANDATORY_ADDRESS_MUST_BE_MORE_THAN_15_CHARS' | translate }}
+                                {{ 'WORKPLACE_ADDRESS_MUST_BE_MORE_THAN_15_CHARS' | translate }}
                             </div>
                         </div>
                     </md-input-container>
@@ -194,25 +209,37 @@
                 <div
                         layout="row"
                         layout-wrap
-                        layout-align="center stretch"
+                        layout-align="center center"
                         style="margin-top: 0px">
+                    <md-checkbox
+                            flex="45"
+                            style="font-size: 11px ; margin-top: 15px"
+                            ng-disabled="!(formData.$valid)"
+                            ng-model="agreement" >
+                        {{'ALL_THE_ABOVE_INFORMATION_IS_UNDER_MY_AGREEMENT'|translate}}
+                    </md-checkbox>
                     <md-button
+                            flex="15"
+                            class="md-list-item-content md-primary"
+                            style="background-color: #848587;color: #fafafa;"
+                            ng-confirm-click={{'ARE_YOU_SURE_TO_WANT_TO_DELETE?'|translate}}
+                            confirmed-click="design_20200(this)">
+                        <span class="md-inline-list-icon-label">{{'ABORT_OF_REGISTRATION' | translate}}</span>
+                    </md-button>
+                    <md-button
+                            flex="10"
                             class="md-list-item-content md-primary"
                             style="background-color: #848587;color: #fafafa;"
                             ng-click="makeDesign_272437();">
                         <span class="md-inline-list-icon-label">{{'BACK' | translate}}</span>
                     </md-button>
                     <md-button
+                            flex="10"
                             class="md-list-item-content md-primary"
                             style="background-color: #052963;color: #fafafa;"
+                            ng-disabled="!agreement"
                             ng-click="makeDesign_272436();">
                         <span class="md-inline-list-icon-label">{{'CONFIRM' | translate}}</span>
-                    </md-button>
-                    <md-button
-                            class="md-list-item-content md-primary"
-                            style="background-color: #848587;color: #fafafa;"
-                            ng-click="makeDesign_293029();">
-                        <span class="md-inline-list-icon-label">{{'ABORT_OF_REGISTRATION' | translate}}</span>
                     </md-button>
                 </div>
             </div>

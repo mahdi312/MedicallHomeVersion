@@ -33,7 +33,7 @@ $scope.makeDesign_272365 = function(param){
 
     // countdown Timer
     $scope.showCountDownTimer = true ;
-    $scope.resendButton = true ;
+    $scope.resendButton = false ;
     $scope.counter = localStorage.getItem("__localStorage.__expirationTime")/1000;
     if($scope.counter !== 0 || $scope.counter !== null) {
         $scope.onTimeout = function () {

@@ -1,8 +1,9 @@
 <div flex="100"
-     oc-lazy-load="{name:'myApp',files:['Content/190489.js?r=676133825','Design/design10106.js?r=2053089544','Design/design10099.js?r=2053089544','Design/design10123.js?r=2053089544','scripts/angular-md5.js']}">
+     oc-lazy-load="{name:'myApp',files:['Content/190489.js?r=676133825','Design/design20200.js?r=1746330182','Design/design10106.js?r=2053089544','Design/design10099.js?r=2053089544','Design/design10123.js?r=2053089544','scripts/angular-md5.js']}">
     <div ng-controller="Design_10106"></div>
     <div ng-controller="Design_10099"></div>
     <div ng-controller="Design_10123"></div>
+    <div ng-controller="Design_20200"></div>
     <div ng-controller="Ctrl190489">
         <form id="formData" name="formData" layout-padding style="width: 450px">
             <div layout="column" style="margin :0 auto">
@@ -16,7 +17,6 @@
                 </div>
                 <div layout-padding layout="row" layout-align="center center">
                     <div style="text-align: center ; font-size: small">
-                        <span style="color: #00C6D7;">{{'DEAR_USER' | translate}}</span>
                         <span>{{'PLEASE_ENTER_YOUR_PASSWORD_OF_PERSONAL_DASHBOARD' | translate}}</span>
                     </div>
                 </div>
@@ -76,26 +76,29 @@
                 </md-input-container>
                 <div
                         layout="row"
-                        layout-wrap
-                        layout-align="center stretch"
+                        layout-align="center center"
                         style="margin-top: -25px">
                     <md-button
+                            flex="20"
+                            class="md-raised md-primary"
+                            style="background-color: #848587;color: #fafafa;"
+                            ng-confirm-click={{'ARE_YOU_SURE_TO_WANT_TO_DELETE?'|translate}}
+                            confirmed-click="design_20200(this)">
+                        <span class="md-inline-list-icon-label">{{'ABORT_OF_REGISTRATION' | translate}}</span>
+                    </md-button>
+                    <md-button
+                            flex="10"
                             class="md-raised md-primary"
                             style="background-color: #848587;color: #fafafa;"
                             ng-click="makeDesign_272399();">
                         <span class="md-inline-list-icon-label">{{'BACK' | translate}}</span>
                     </md-button>
                     <md-button
+                            flex="10"
                             class="md-raised md-primary"
                             style="background-color: #052963;color: #fafafa;"
                             ng-click="(formData.$valid)?makeDesign_272400():'';">
-                        <span class="md-inline-list-icon-label">{{'CONFIRM' | translate}}</span>
-                    </md-button>
-                    <md-button
-                            class="md-raised md-primary"
-                            style="background-color: #848587;color: #fafafa;"
-                            ng-click="makeDesign_293027();">
-                        <span class="md-inline-list-icon-label">{{'ABORT_OF_REGISTRATION' | translate}}</span>
+                        <span class="md-inline-list-icon-label">{{'NEXT' | translate}}</span>
                     </md-button>
                 </div>
             </div>

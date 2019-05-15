@@ -7,7 +7,7 @@ $rootScope.design_10150 = function($scope,param,$event){
 	//localStorage.clear();
 	$rootScope.setDashboard("mainDashboard","mainPanel");
 	
-	url= 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/account/signout/patient/'+$scope.patientId+'';
+	url= 'http://172.16.201.212:8081/rest/api/v1/account/signout/patient/'+$scope.patientId+'';
 	$scope.callBack_10150 = function(data){
 		
 		// $rootScope.signOut();

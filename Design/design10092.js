@@ -5,7 +5,7 @@ angular.module("APP").controller("Design_10092", ['$rootScope', '$scope', '$http
     $rootScope.design_10092 = function ($scope, param, $event) {
         localStorage.setItem("__localStorage.__nationalCode", $scope.Form.nationalCode);
 
-        url = 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/membership/status/' + $scope.Form.nationalCode + '';
+        url = 'http://172.16.201.212:8081/rest/api/v1/membership/status/' + $scope.Form.nationalCode + '';
         $scope.callBack_10092 = function (data) {
 
             if (data.mdc_error_code == -1) {

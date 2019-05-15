@@ -4,7 +4,7 @@ angular.module("APP").controller("Design_20200", ['$rootScope', '$scope', '$http
 
     $rootScope.design_20200 = function ($scope, param, $event) {
         $scope.nationalCode = localStorage.getItem("__localStorage.__nationalCode");
-        url = 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/membership/signup/doctor/remove/' + $scope.nationalCode + '';
+        url = 'http://172.16.201.212:8081/rest/api/v1/membership/signup/doctor/remove/' + $scope.nationalCode + '';
         $scope.callBack_20200 = function (data) {
             if (data.mdc_error_code == -1) {
                 $rootScope.resultMsg(2, $filter('translate')(data.mdc_error_msg));

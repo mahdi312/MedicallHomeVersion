@@ -1,8 +1,9 @@
 <div flex="100"
-     oc-lazy-load="{name:'myApp',files:['Content/190483.js?r=1439570820','Design/design10103.js?r=669042892','Design/design10150.js?r=2045998611','Design/design10119.js?r=2045998611','scripts/ngMask.min.js','scripts/md-input.css']}">
+     oc-lazy-load="{name:'myApp',files:['Content/190483.js?r=1439570820','Design/design20200.js?r=669042892','Design/design10103.js?r=669042892','Design/design10150.js?r=2045998611','Design/design10119.js?r=2045998611','scripts/ngMask.min.js','scripts/md-input.css']}">
     <div ng-controller="Design_10103"></div>
     <div ng-controller="Design_10150"></div>
     <div ng-controller="Design_10119"></div>
+    <div ng-controller="Design_20200"></div>
 
     <div ng-controller="Ctrl190483">
         <form id="formData" name="formData" layout-padding style="width: 450px">
@@ -18,7 +19,6 @@
                 </div>
                 <div layout="row" layout-align="center center">
                     <div style="text-align: center">
-                        <span style="font-size:15px; color: #00C6D7;">{{'DEAR_USER' | translate}}</span>
                         <span style="font-size:15px">{{'PLEASE_ENTER_YOUR_PHYSICIAN_COUNCIL_CODE' | translate}}</span>
                     </div>
                 </div>
@@ -47,16 +47,17 @@
                 </md-input-container>
                 <div layout="row" layout-wrap layout-align="center center">
                     <md-button flex="45"
-                            class="md-raised md-primary"
-                            style="background-color: #848587;color: #fafafa;"
-                            ng-click="makeDesign_293261();">
+                               class="md-raised md-primary"
+                               style="background-color: #848587;color: #fafafa;"
+                               ng-confirm-click={{'ARE_YOU_SURE_TO_WANT_TO_DELETE?'|translate}}
+                               confirmed-click="design_20200(this)">
                         <span class="md-inline-list-icon-label">{{'ABORT_OF_REGISTRATION' | translate}}</span>
                     </md-button>
                     <md-button flex="45"
                                class="md-raised md-primary"
                                style="background-color: #052963;color: #fafafa;"
                                ng-click="(formData.$valid)?makeDesign_272390():'';">
-                        <span class="md-inline-list-icon-label">{{'CONFIRM' | translate}}</span>
+                        <span class="md-inline-list-icon-label">{{'NEXT' | translate}}</span>
                     </md-button>
                 </div>
             </div>

@@ -4,7 +4,7 @@ angular.module("APP").controller("Design_10124", ['$rootScope', '$scope', '$http
 
     $rootScope.design_10124 = function ($scope, param, $event) {
 
-        url = 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/workplace/toggle/' + $scope._workplace[index].id + '';
+        url = 'http://172.16.201.212:8081/rest/api/v1/workplace/toggle/' + $scope._workplace[index].id + '';
         $scope.callBack_10124 = function (data) {
 
             if (data.mdc_error_code == -1) {

@@ -3,7 +3,7 @@ angular.module("APP").controller("Design_30255", ['$rootScope', '$scope', '$http
 ////////////////// code for action : getPersonImage 
 
     $rootScope.design_30255 = function ($scope, param, $event) {
-        url = 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/account/patient/image/' + param;
+        url = 'http://172.16.201.212:8081/rest/api/v1/account/patient/image/' + param;
         $scope.callBack_30255 = function (data) {
             $scope.$eval("imageResult=" + JSON.stringify(data));
             $scope.picUrl = "data:image/png;base64,";

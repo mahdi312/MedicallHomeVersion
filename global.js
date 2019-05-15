@@ -2,7 +2,7 @@ var app = angular.module("APP", ['ngMaterial','ngStorage','oc.lazyLoad','pascalp
 
 app.controller("globalCTRL", ['$rootScope','$scope', '$http','$q','$filter','$translate','$mdToast', function ($rootScope,$scope, $http,$q, $filter,$translate,$mdToast){
 	$rootScope.AppTitle="Medicall";
-	$rootScope.BaseUrls="http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/;http://172.16.201.249:8081/rest/api/v1/".split(";");
+	$rootScope.BaseUrls="http://172.16.201.212:8081/rest/api/v1/;http://172.16.201.249:8081/rest/api/v1/".split(";");
 	$rootScope.contents=[];
 	$rootScope.changeLanguage = function (lang) {
 		$translate.use(lang);

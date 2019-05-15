@@ -81,8 +81,7 @@
 <md-input-container 
 	 flex="45" flex-xs="100" >
     <md-icon>home</md-icon>
-    <input ng-model="Form.address.mandatoryAddress"   
-	  md- 
+    <input ng-model="Form.address.mandatoryAddress"
 	maxlength="100" md-maxlength="100"  
 	
 	name="address"  required    >	
@@ -90,10 +89,10 @@
     	<div class="hint" >{{'' | translate }}</div>
     <div ng-messages="formData.address.$error" role="alert" >
 		<div ng-message="required" class="my-message">
-			{{ 'MANDATORY_ADDRESS_IS_REQUIRED' | translate }}
+			{{ 'WORKPLACE_ADDRESS_IS_REQUIRED' | translate }}
 		</div>
 		<div ng-message="maxlength" class="my-message">
-			{{ 'MANDATORY_ADDRESS_MUST_BE_LESS_THAN_100_DIGITS' | translate }}
+			{{ 'WORKPLACE_ADDRESS_MUST_BE_LESS_THAN_100_DIGITS' | translate }}
 		</div>
 	</div>
 </md-input-container>

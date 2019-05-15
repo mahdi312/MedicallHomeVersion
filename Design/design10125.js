@@ -6,7 +6,7 @@ angular.module("APP").controller("Design_10125", ['$rootScope', '$scope', '$http
         $scope.Form.doctorAccount = {};
         $scope.Form.doctorAccount.id = $scope.DocInfo.id;
 
-        url = 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/workplace/save';
+        url = 'http://172.16.201.212:8081/rest/api/v1/workplace/save';
         $scope.callBack_10125 = function (data) {
             if (data.mdc_error_code == -1) {
                 $rootScope.resultMsg(2, $filter('translate')(data.mdc_error_msg));

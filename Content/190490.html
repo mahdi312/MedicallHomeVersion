@@ -1,9 +1,15 @@
 <div flex="100"
-     oc-lazy-load="{name:'myApp',files:['Content/190490.js?r=25093505','Design/design10107.js?r=376465396','Design/design10109.js?r=376465396','Design/design10123.js?r=376465396']}">
+     oc-lazy-load="{name:'myApp',files:['Content/190490.js?r=25093505','Design/design20209.js?r=1746330182','Design/design20200.js?r=1746330182','Design/design10107.js?r=376465396','Design/design10109.js?r=376465396','Design/design10123.js?r=376465396']}">
     <div ng-controller="Design_10107"></div>
     <div ng-controller="Design_10109"></div>
     <div ng-controller="Design_10123"></div>
+    <div ng-controller="Design_20200"></div>
+    <div ng-controller="Design_20209"></div>
     <div ng-controller="Ctrl190490">
+        <div ng-init="design_20209(this)" style="display:none"></div>
+        <div ng-init="getInitData('docInfo','','0','workplace/list/doctor/'+docId+'',{},this)"
+             style="display:none">
+        </div>
         <form id="formData" name="formData" layout-padding style="width: 450px">
             <div layout="column" style="margin :0 auto">
                 <div layout="row" layout-align="center center">
@@ -16,13 +22,12 @@
                 </div>
                 <div layout-padding layout="row" layout-align="center center">
                     <div style="text-align: center ; font-size: small">
-                        <span style="color: #00C6D7;">{{'DEAR_USER' | translate}}</span>
                         <span>{{'PLEASE_CHOOSE_YOUR_SPECIALTY' | translate}}</span>
                     </div>
                 </div>
                 <!--div ng-init="getDynamicData('__specialtyTypeList','','0','/base/list/specialty','',[],this)"></div-->
                 <div data-ng-init=" __specialtyTypeList =  " style="display:none"></div>
-                <div data-ng-init=" Form.specialty =  " style="display:none"></div>
+                <div data-ng-init=" Form.specialty = docInfo.specialty.id " style="display:none"></div>
                 <md-input-container flex="100" flex-xs="100" md-no-float>
                     <md-icon>school</md-icon>
                     <md-select required
@@ -37,25 +42,29 @@
                 </md-input-container>
                 <div
                         layout="row"
-                        layout-align="center stretch"
+                        layout-align="center center"
                         style="margin-top: -8px">
                     <md-button
+                            flex="20"
+                            class="md-raised md-primary"
+                            style="background-color: #848587;color: #fafafa;"
+                            ng-confirm-click={{'ARE_YOU_SURE_TO_WANT_TO_DELETE?'|translate}}
+                            confirmed-click="design_20200(this)">
+                        <span class="md-inline-list-icon-label">{{'ABORT_OF_REGISTRATION' | translate}}</span>
+                    </md-button>
+                    <md-button
+                            flex="10"
                             class="md-raised md-primary"
                             style="background-color: #848587;color: #fafafa;"
                             ng-click="makeDesign_272409();">
                         <span class="md-inline-list-icon-label">{{'BACK' | translate}}</span>
                     </md-button>
                     <md-button
+                            flex="10"
                             class="md-raised md-primary"
                             style="background-color: #052963;color: #fafafa;"
                             ng-click="(formData.$valid)?makeDesign_272408():'';">
-                        <span class="md-inline-list-icon-label">{{'CONFIRM' | translate}}</span>
-                    </md-button>
-                    <md-button
-                            class="md-raised md-primary"
-                            style="background-color: #848587;color: #fafafa;"
-                            ng-click="makeDesign_293028();">
-                        <span class="md-inline-list-icon-label">{{'ABORT_OF_REGISTRATION' | translate}}</span>
+                        <span class="md-inline-list-icon-label">{{'NEXT' | translate}}</span>
                     </md-button>
                 </div>
             </div>

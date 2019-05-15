@@ -12,7 +12,7 @@ angular.module("APP").controller("Design_10105", ['$rootScope', '$scope', '$http
         $scope.globalEntity2.person.gender.id = $scope.patientInfo.person.gender;
         $scope.globalEntity2.person.birthDate = $scope.patientInfo.person.birthDate;
         $scope.globalEntity2.membershipStatus = 2;
-        url = 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/membership/signup/doctor';
+        url = 'http://172.16.201.212:8081/rest/api/v1/membership/signup/doctor';
         $scope.callBack_10105 = function (data) {
 
             if (data.mdc_error_code == -1) {

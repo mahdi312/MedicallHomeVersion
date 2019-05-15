@@ -4,7 +4,7 @@ angular.module("APP").controller("Design_10134", ['$rootScope', '$scope', '$http
 
     $rootScope.design_10134 = function ($scope, param, $event) {
 
-        url = 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/account/doctor/toggle?doctorid=' + $rootScope.DocInfo.id + '&smsid=' + $scope.toggleStatus.result + '&smscode=' + $scope.Form.verifyCode + '';
+        url = 'http://172.16.201.212:8081/rest/api/v1/account/doctor/toggle?doctorid=' + $rootScope.DocInfo.id + '&smsid=' + $scope.toggleStatus.result + '&smscode=' + $scope.Form.verifyCode + '';
         $scope.callBack_10134 = function (data) {
 
             if (data.mdc_error_msg == "DEACTIVATION_COMMITED") {

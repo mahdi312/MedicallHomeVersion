@@ -13,7 +13,7 @@ $rootScope.design_10138 = function($scope,param,$event){
 	$scope.editPass.input = $scope.Form.newPassword;
 	$scope.editPass.input1 = $scope.Form.confirmPassword;
 	
-	url= 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/account/patient/password/edit';
+	url= 'http://172.16.201.212:8081/rest/api/v1/account/patient/password/edit';
 	$scope.callBack_10138 = function(data){
         if (data.mdc_error_code == -1) {
             $rootScope.resultMsg(2, $filter('translate')(data.mdc_error_msg));

@@ -12,7 +12,7 @@ angular.module("APP").controller("Design_10099", ['$rootScope', '$scope', '$http
         $rootScope.globalEntity3.doctorAccount.password = $scope.Form.password;
         $rootScope.globalEntity3.input = $scope.Form.confirmPassword;
         $rootScope.globalEntity3.membershipStatus = 3;
-        url = 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/membership/signup/doctor';
+        url = 'http://172.16.201.212:8081/rest/api/v1/membership/signup/doctor';
         $scope.callBack_10099 = function (data) {
 
             if ($scope.Form.password == $scope.Form.confirmPassword) {
