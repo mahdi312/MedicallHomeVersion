@@ -5,7 +5,7 @@ angular.module("APP").controller("getPatientInfoByID", ['$rootScope', '$scope', 
 $rootScope.getPatientInfoByID = function($scope,param,$event){
 	localStorage.setItem("__localStorage.__nationalCode", null);
 	$scope.patientId = localStorage.getItem("__localStorage.__patientId");
-	url= 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/account/patient/'+$scope.patientId+'';
+	url= 'http://172.16.201.212:8081/rest/api/v1/account/patient/'+$scope.patientId+'';
 	$scope.callBack_10135 = function(data){
 		$scope.PatientInfo = {};
 		$scope.PatientInfo = data ;

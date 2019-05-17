@@ -7,7 +7,7 @@ angular.module("APP").controller("compareVerifyCode", ['$rootScope', '$scope', '
         $scope.SmsObject = {};
         $scope.SmsObject.input = $scope.Form.verifyCode;
         $scope.SmsObject.input1 = $rootScope.smsData;
-        url = 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/validate/sms/compare';
+        url = 'http://172.16.201.212:8081/rest/api/v1/validate/sms/compare';
         $scope.callBack_20197 = function (data) {
             if (data.mdc_error_code == -1) {
                 $rootScope.resultMsg(2, $filter('translate')(data.mdc_error_msg));

@@ -9,7 +9,7 @@ angular.module("APP").controller("setSecretaryPassword", ['$rootScope', '$scope'
         $scope.saveSecPass.input = $scope.Form.password;
         $scope.saveSecPass.input1 = $scope.Form.confirmPassword;
 
-        url = 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/account/secretary/password/edit';
+        url = 'http://172.16.201.212:8081/rest/api/v1/account/secretary/password/edit';
         $scope.callBack_20216 = function (data) {
             if (data.mdc_error_code == -1) {
                 $rootScope.resultMsg(2, $filter('translate')(data.mdc_error_msg));

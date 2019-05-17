@@ -4,7 +4,7 @@ angular.module("APP").controller("getDoctorSignUpStatus", ['$rootScope', '$scope
 
 $rootScope.getDoctorSignUpStatus = function($scope,param,$event){
 	$scope.patientId = localStorage.getItem("__localStorage.__patientId");
-	url= 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/membership/signup/doctor/status/'+$scope.patientId+'';
+	url= 'http://172.16.201.212:8081/rest/api/v1/membership/signup/doctor/status/'+$scope.patientId+'';
 	$scope.callBack_20229 = function(data){
 		$scope.patientInfo = {} ;
 		$scope.patientInfo = data ; 

@@ -10,7 +10,7 @@ angular.module("APP").controller("doctorEditPassword", ['$rootScope', '$scope', 
         $scope.editPass.input = $scope.Form.newPassword;
         $scope.editPass.input1 = $scope.Form.confirmPassword;
 
-        url = 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/account/doctor/password/edit';
+        url = 'http://172.16.201.212:8081/rest/api/v1/account/doctor/password/edit';
         $scope.callBack_10128 = function (data) {
             $scope.$eval("editPassData=" + JSON.stringify(data))
             if (data.mdc_error_code == -1) {

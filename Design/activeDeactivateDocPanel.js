@@ -4,7 +4,7 @@ angular.module("APP").controller("activeDeactivateDocPanel", ['$rootScope', '$sc
 
 $rootScope.activeDeactivateDocPanel = function($scope,param,$event){
 	
-	url= 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/validate/sms/account/doctor/toggle?id='+$scope.DocInfo.id+'';
+	url= 'http://172.16.201.212:8081/rest/api/v1/validate/sms/account/doctor/toggle?id='+$scope.DocInfo.id+'';
 
 	$scope.callBack_10114 = function(data){
         if (data.mdc_error_code == -1) {
