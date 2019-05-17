@@ -1,0 +1,78 @@
+<!--	
+<div ng-init="skinPath='Skin/skin1/'"></div>	
+<div ng-include="skinPath+'toolbar.html?r='+rand" ng-init="pageContent=(contents|filter:{pageContentId:pageContentId})[0]"></div>
+-->
+
+<div
+        ng-init="contents =
+		[
+		{'index':0,'pageContentId':'DSU_PhysicianCouncilCode','contentId':'160285', 'title':'','icon':'info'},
+		{'index':1,'pageContentId':'DSU_AccountInformation','contentId':'160286', 'title':'','icon':'person'},
+		{'index':2,'pageContentId':'DSU_SetPassword','contentId':'160287', 'title':'','icon':'code'},
+		{'index':3,'pageContentId':'DSU_Specialty','contentId':'160288', 'title':'','icon':'add_circle'},
+		{'index':4,'pageContentId':'DSU_WorkplaceInfo','contentId':'160290', 'title':'','icon':'list_alt'},
+		{'index':5,'pageContentId':'DSU_ConfirmInfo','contentId':'160289', 'title':'','icon':'list_alt'}
+		]; selectedContent();">
+</div>
+<style>
+    .__modern {
+        border: inset 2px #052963;
+        border-radius: 15px;
+        background: #ede0e933;
+        padding: 1px;
+    }
+
+    .___modern {
+        padding-left: 2px;
+        padding-right: 6px;
+        margin: 1px;
+    }
+
+    .___modern.cnt1 {
+        background: #00c6d7;
+        color: #052963;
+        font-weight: bold;
+        border-radius: 8px;
+        font-style: oblique;
+    }
+
+    .___modern.cnt2 {
+        background: #00c6d7;
+        border-radius: 8px;
+    }
+
+    .___modern.cnt3 {
+        color: #00c6d7
+    }
+    .done{
+
+    }
+</style>
+<div flex="100" layout="row" layout-align="center center">
+    <div layout="row" class="__modern" flex="67" style="margin-top: 35px ; margin-bottom: 40px" layout-align="center center">
+        <div ng-repeat="content in contents" layout="row" >
+            <div flex="100"  class="___modern
+				{{content.index==(contents|filter:pageContentId:pageContentId)[0].index?'cnt1':''}}
+				{{content.index<(contents|filter:pageContentId:pageContentId)[0].index?'cnt2':''}}
+				{{content.index>(contents|filter:pageContentId:pageContentId)[0].index?'cnt3':''}}"
+            >
+                <md-icon>arrow_{{('DIRECTION'|translate)=='rtl'?'left':'right'}}_bold</md-icon>
+                <md-icon id="done">done</md-icon>
+                {{content.title | translate}}
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-repeat="content in contents" layout="row" flex="67">
+    <div ng-if="content.index==(contents|filter:pageContentId:pageContentId)[0].index"
+         ng-include="'Content/'+content.pageContentId+'.html?r='+rand"
+         flex="100"
+         layout="column"
+         style="height: calc(100vh - 250px);"
+         layout-align="center center">
+    ></div>
+</div>
+
+
+
+

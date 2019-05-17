@@ -14,7 +14,7 @@
 		</div>
 		<div  flex="100" layout="row" layout-align="end center" class="part2">
 			<!-- SEARCH -->			
-			<div ng-include="skinPath+'toolbar/search.html?r='+rand"></div>
+			<div ng-if="dashboardName=='patientDashboard'" ng-include="skinPath+'toolbar/search.html?r='+rand"></div>
 			<!-- SEARCH -->
 			<!-- Exit -->
 			<div ng-include="skinPath+'toolbar/exit.html?r='+rand"></div>

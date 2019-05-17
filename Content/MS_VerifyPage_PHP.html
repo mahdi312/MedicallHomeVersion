@@ -1,0 +1,48 @@
+<div flex="100" oc-lazy-load="{name:'myApp',files:['Content/MS_VerifyPage_PHP.js?r=221523123','Design/checkPatientSMS.js?r=1598478842','Design/resendSMS.js?r=1949850733','scripts/ngMask.min.js','scripts/md-input.css']}">
+    <div ng-controller="checkPatientSMS"></div>
+    <div ng-controller="resendSMS"></div>
+
+    <div ng-controller="CtrlMS_VerifyPage_PHP">
+        <form id="formData" name="formData" layout-padding style="width: 450px">
+            <div layout="column" style="margin :0 auto">
+                <div layout="row" layout-align="center center">
+                    <img style="width: 100px ; " src="../images/lock.png">
+                </div>
+                <div layout="row" layout-align="center center">
+                    <div style="text-align: center">
+                        <span style="font-size:15px; color: #000000;">{{'VERIFICATION_CODE_HAS_BEEN_SENT_FOR_YOUR_MOBILE_NUMBER' | translate}}</span>
+                    </div>
+                </div>
+                <div dir="ltr" layout="row" layout-wrap layout-padding layout-align="center center">
+                    <input class="verifyInput" flex="10" type="text" id="part[$index]" ng-focus="$index==3" ng-model="Form.verifyCode1" maxlength="1" move-next-on-maxlength valid-number/>
+                    <input class="verifyInput" flex="10" type="text" id="part[$index]" ng-focus="$index==2" ng-model="Form.verifyCode2" maxlength="1" move-next-on-maxlength valid-number/>
+                    <input class="verifyInput" flex="10" type="text" id="part[$index]" ng-focus="$index==1" ng-model="Form.verifyCode3" maxlength="1" move-next-on-maxlength valid-number/>
+                    <input class="verifyInput" flex="10" type="text" id="part[$index]" ng-focus="$index==0" ng-model="Form.verifyCode4" maxlength="1" valid-number/>
+                </div>
+                <md-button
+                        class="md-raised md-primary"
+                        ng-click="makeDesign_272365();" flex="100" flex-xs="100"
+                        style="background-color: #052963; border-radius: 4px">
+                    <span class="md-inline-list-icon-label">{{'SEND_VERIFY_CODE' | translate}}</span>
+                </md-button>
+                <div  ng-show="{{showCountDownTimer}}" layout="row" layout-align="center center" layout-padding>
+                    <div class="countdownTimer" layout="row" layout-align="center center">{{counter | secondsToDateTime
+                        | date:'ss'}}
+                    </div>
+                    <div layout="row" layout-align="center center" style="color:#676767;margin:0;padding:1px">:</div>
+                    <div class="countdownTimer" layout="row" layout-align="center center">{{counter | secondsToDateTime
+                        | date:'mm'}}
+                    </div>
+                </div>
+                <md-button
+                        ng-click="makeDesign_293190();"
+                        ng-disabled="{{resendButton}}"
+                        flex="45" flex-xs="100">
+                    <md-icon class="material-icons">forward_30</md-icon>
+                    <span class="md-inline-list-icon-label" style="font-size:15px; color: #00C6D7;">{{'RESEND' | translate}}</span>
+                    <span class="md-inline-list-icon-label" style="font-size:15px; color: #000000;">{{'CODE_TO_MOBILE_NUMBER' | translate}}</span>
+                </md-button>
+            </div>
+        </form>
+    </div>
+</div> 

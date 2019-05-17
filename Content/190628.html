@@ -6,7 +6,7 @@
 	<div flex="100" layout-wrap layout="row" layout-align="center center">
 		<div flex="60" flex-xs="100" layout-padding >
 			<div flex="100" layout-wrap layout="row">
-<div ng-init="design_10135(this)" style="display:none"></div>
+<div ng-init="getPatientInfoByID(this)" style="display:none"></div>
 
 
 <md-input-container  flex="100" flex-xs="100" >
@@ -109,10 +109,10 @@
 				<md-radio-button class="md-primary" value="12">{{ 'FEMALE' | translate }}</md-radio-button>
 			</md-radio-group>
 		</md-input-container>
-<div ng-init="design_10147(this)" style="display:none"></div>
+<div ng-init="changeDate(this)" style="display:none"></div>
 <md-button  
 	class="md-list-item-content md-primary" 
-	ng-click="design_10137(this);" flex="100" flex-xs="100"  >
+	ng-click="patientEditInfo(this);" flex="100" flex-xs="100"  >
     <md-icon class="material-icons"></md-icon>
     <span class="md-inline-list-icon-label">{{'APPROVE' | translate}}</span>   
 </md-button>

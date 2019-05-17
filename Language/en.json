@@ -33,7 +33,7 @@
 	"PLEASE_ENTER_YOUR_NATIONAL_CODE":"Please Enter Your National Code",
 	"DEAR_USER":"Dear User, ",
 
-	"MOBILE_NUMBER_IS_REQUIRED":"Mobile Number Is Required (Example: 9123456789)",
+	"MOBILE_NUMBER_IS_REQUIRED":"Mobile Number Is Required (Example: 91********)",
 	"MOBILE_NUMBER_IS_NOT_VALID":"Mobile Number Is Not Valid",
 	"MOBILE_NUMBER_IS_MORE_THAN_10_DIGITS":"Mobile Number Is More Than 10 Digits",
 	"MOBILE_NUMBER_IS_LESS_THAN_10_DIGITS":"Mobile Number Is Less Than 10 Digits",
@@ -71,6 +71,7 @@
 	"PLEASE_ENTER_YOUR_PASSWORD_OF_PERSONAL_DASHBOARD":"Please Enter Your Password Of Personal Dashboard",
 	"PLEASE_ENTER_YOUR_PASSWORD_OF_PHYSICIAN_DASHBOARD":"Please Enter Your Password Of Physician Dashboard",
 	"PLEASE_ENTER_YOUR_PASSWORD_OF_SECRETARY_DASHBOARD":"Please Enter Your Password Of Secretary Dashboard",
+	"PLEASE_SET_YOUR_PASSWORD_OF_SECRETARY_DASHBOARD":"Please Set Your Password Of Secretary Dashboard",
 
 	"NATIONAL_CODE": "National/Faragir Code",
 	"MOBILE_NUMBER": "Mobile Number",
@@ -116,6 +117,10 @@
 	"PHONE_NUMBER":"Phone Number",
 	"CELL_PHONE":"Cell Phone",
 	"POSTAL_CODE":"Postal Code",
+	"OFFICE_POSTAL_CODE":"Office postal Code",
+	"CLINIC_POSTAL_CODE":"Clinic postal Code",
+	"HOSPITAL_POSTAL_CODE":"Hospital Postal Code",
+	"DOCTORS_BUILDING_POSTAL_CODE":"Doctor's Building Postal Code",
 	"POSTAL_CODE_IS_REQUIRED":"Postal Code Is Required",
 	"POSTAL_CODE_IS_NOT_VALID":"Postal Code Is Not Valid",
 	"POSTAL_CODE_MUST_BE_10_DIGITS":"Postal Code Must be 10 Digits",
@@ -128,7 +133,11 @@
 	"WORKPLACE_FAX": "Workplace Fax",
 	"PRIMARY_LANGUAGE": "Primary Language",
 	"SECONDARY_LANGUAGE": "Secondary Language",
+	"DOCTORS_BUILDING_MAIN_ADDRESS": "Doctor's Building Main Address",
 	"WORKPLACE_MAIN_ADDRESS": "Workplace Main Address",
+	"OFFICE_MAIN_ADDRESS": "Office Main Address",
+	"CLINIC_MAIN_ADDRESS": "Clinic Main Address",
+	"HOSPITAL_MAIN_ADDRESS": "Hospital Main Address",
 	"WORKPLACE_SUPPLEMENTARY_ADDRESS": "Workplace Supplementary Address",
 	"GENERAL_WORKPLACE_PHONE_NUMBER": "General Office Work Phone",
 	"GENERAL_WORKPLACE_FAX": "General Office Work Fax",
@@ -140,9 +149,9 @@
 	"ENTER_YOUR_ADDRESS_TYPE": "Enter Your Workplace Type",
 	"ADDRESS_TYPE": "Type Of Medicall Place",
 	"MEDICALL_COUNCIL_CODE_IS_REQUIRED": "Medicall Council Code Is Required",
-	"MANDATORY_ADDRESS_IS_REQUIRED": "Mandatory Address Is Required",
-	"MANDATORY_ADDRESS_MUST_BE_LESS_THAN_100_CHARS": "Mandatory Address Must Be Less Than 100 Characters",
-	"MANDATORY_ADDRESS_MUST_BE_MORE_THAN_15_CHARS": "Mandatory Address Must Be More Than 15 Characters",
+	"WORKPLACE_ADDRESS_IS_REQUIRED": "Workplace Address Is Required",
+	"WORKPLACE_ADDRESS_MUST_BE_LESS_THAN_100_CHARS": "Address Must Be Less Than 100 Characters",
+	"WORKPLACE_ADDRESS_MUST_BE_MORE_THAN_15_CHARS": "Address Must Be More Than 15 Characters",
 	"SUPPLEMENTARY_ADDRESS_IS_REQUIRED": "Supplementary Address Is Required",
 	"SUPPLEMENTARY_ADDRESS_MUST_BE_LESS_THAN_100_CHARS": "Supplementary Address Must Be Less Than 100 Characters",
 	"GENERAL_WORKPLACE_PHONE_NUMBER_IS_REQUIRED": "General Workplace Phone Number Is Required",
@@ -196,7 +205,16 @@
 	"VERIFY": "Verify",
 	"BACK": "Back",
 	"IDENTIFY": "Identify",
-	"ABORT_OF_REGISTRATION": "َAbort Of Registration",
+	"ABORT_OF_REGISTRATION": "Abort Of Registration",
+
+
+	"VISIT": "Visit",
+	"ARCHIVE_OF_MEDICALL_RECORDS": "Archive Of Medicall Records",
+	"SCHEDULE_A_PATIENT": "Schedule A Patient",
+	"OFFICE_MANAGEMENT": "Office Management",
+	"SUMMARY_OF_REPORTS": "Summary Of Reports",
+
+
 
 	"YEAR": "yyyy",
 	"MONTH": "mm",
@@ -226,7 +244,7 @@
 
 	"CHANGE_ACCOUNT":"You can change your account setting here.",
 	"YOUR_INFORMATION_HAS_BEEN_SAVED_IN_THE_MEDICALL_COMPREHENSIVE_SYSTEM":"Your Information Has Been Saved In The Medicall Comprehensive System",
-	"PLEASE_CONFIRM_THE_INFORMATION_YOU_ENTERED":"Please Confirm The Information You Entered",
+	"PLEASE_CONFIRM_THE_INFORMATION_YOU_ENTERED":"Your Registration As A Physician Has Been Done Deactivated With The Following Information; If You Want To Cancel It, Choose Abort Of Registration.",
 
 	"ACCOUNT_STATUS":"Account Status:",
 	"USER_IS_ACTIVE":"Your user is currently active",
@@ -244,7 +262,7 @@
 	"BIRTH_DATE_HINT": "19**/03/12",
 	"PASSWORD_HINT": "******",
 	"NATIONAL_CODE_HINT": "007*****41",
-	"MOBILE_NUMBER_HINT": "912*****34",
+	"MOBILE_NUMBER_HINT": "912*******",
 	"VERIFY_CODE_HINT": "****",
 
 	"ALL_THE_ABOVE_INFORMATION_IS_UNDER_MY_AGREEMENT" : "All The Above Information Is Under My Agreement.",

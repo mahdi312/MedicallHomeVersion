@@ -17,13 +17,13 @@ app.get('/getData', function (req, res) {
             filter = JSON.parse(req.query.filter);
             data = JSON.parse(data);
             var data = JSON.stringify(where(data, filter));
-        } catch (e) { };
+        } catch (e) { }
         res.end(data);
 	});
 });
 
 var server = app.listen(8089, function () {
-  var host = server.address().address
-  var port = server.address().port
+  var host = server.address().address;
+  var port = server.address().port;
   console.log("Picasso2 DataService started at http://%s:%s", host, port)
-})
+});

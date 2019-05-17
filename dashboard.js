@@ -15,46 +15,44 @@ app.controller("dashboardCTRL", [
             "skin": "skin1",
             "barColor": "orange",
             "searchPageContentId": "190624",
-            "sideNavPageContentId": "190681",
+            "sideNavPageContentId": "DD_DoctorSideNav",
             "pages": []
         };
         $rootScope.dashboardParam["secretaryDashboard"] = {
             "skin": "skin1",
             "barColor": "green",
             "searchPageContentId": "190624",
-            "sideNavPageContentId": "190683",
+            "sideNavPageContentId": "SD_SecretarySideNav",
             "pages": []
         };
         $rootScope.dashboardParam["patientDashboard"] = {
             "skin": "skin1",
             "barColor": "blue",
             "searchPageContentId": "190624",
-            "sideNavPageContentId": "190670",
+            "sideNavPageContentId": "PD_PatientSideNav",
             "pages": []
         };
         $rootScope.dashboardParam["mainDashboard"] = {
             "skin": "skin2",
             "barColor": "red",
             "searchPageContentId": "190624",
-            "sideNavPageContentId": "190670",
+            "sideNavPageContentId": "PD_PatientSideNav",
             "pages": []
         };
 
         // panels
         $rootScope.panels["viewerPanel"] = [];
         $rootScope.panels["mainPanel"] = [
-            {"pageId": "180332", "pageContentId": "190550"}
+            {"pageId": "MemberShip", "pageContentId": "MS_FirstPage"}
         ];
         $rootScope.panels["drProfilePanel"] = [
-            {"pageId": "180340", "pageContentId": "190496"},
-            {"pageId": "180343", "pageContentId": "190572"},
-            {"pageId": "180378", "pageContentId": "190573"},
+            {"pageId": "DoctorDashboard_FirstPage", "pageContentId": "DD_FirstPage"}
         ];
         $rootScope.panels["patientProfilePanel"] = [
-            {"pageId": "patiantDashboardPage", "pageContentId": "patientDashboardHtml"}
+            {"pageId": "PatientDashboard_FirstPage", "pageContentId": "PD_FirstPage"}
         ];
         $rootScope.panels["patientToDoctorPanel"] = [
-            {"pageId": "180339", "pageContentId": "190483"}
+            {"pageId": "DoctorSignUp", "pageContentId": "DSU_PhysicianCouncilCode"}
         ];
 
 

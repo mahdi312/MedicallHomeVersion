@@ -1,6 +1,6 @@
-<div oc-lazy-load="{name:'myApp',files:['Content/190515.js?r=2109817008','Design/design10125.js?r=2109817008','Design/design10141.js?r=313705252','scripts/ngMask.min.js','scripts/md-input.css']}"> 
-	<div ng-controller="Design_10125"></div>
-<div ng-controller="Design_10141"></div>
+<div oc-lazy-load="{name:'myApp',files:['Content/190515.js?r=2109817008','Design/saveDoctorWorkplace.js?r=2109817008','Design/getWorkplaceData.js?r=313705252','scripts/ngMask.min.js','scripts/md-input.css']}">
+	<div ng-controller="saveDoctorWorkplace"></div>
+<div ng-controller="getWorkplaceData"></div>
 
 	<div ng-controller="Ctrl190515">
 	    <form id="formData" name="formData">
@@ -81,8 +81,7 @@
 <md-input-container 
 	 flex="45" flex-xs="100" >
     <md-icon>home</md-icon>
-    <input ng-model="Form.address.mandatoryAddress"   
-	  md- 
+    <input ng-model="Form.address.mandatoryAddress"
 	maxlength="100" md-maxlength="100"  
 	
 	name="address"  required    >	
@@ -90,10 +89,10 @@
     	<div class="hint" >{{'' | translate }}</div>
     <div ng-messages="formData.address.$error" role="alert" >
 		<div ng-message="required" class="my-message">
-			{{ 'MANDATORY_ADDRESS_IS_REQUIRED' | translate }}
+			{{ 'WORKPLACE_ADDRESS_IS_REQUIRED' | translate }}
 		</div>
 		<div ng-message="maxlength" class="my-message">
-			{{ 'MANDATORY_ADDRESS_MUST_BE_LESS_THAN_100_DIGITS' | translate }}
+			{{ 'WORKPLACE_ADDRESS_MUST_BE_LESS_THAN_100_DIGITS' | translate }}
 		</div>
 	</div>
 </md-input-container>
@@ -210,13 +209,13 @@
 <!--  -->
 <md-button  
 	class="md-list-item-content md-primary" 
-	ng-click="design_10125(this);" flex="48" flex-xs="100"  >
+	ng-click="saveDoctorWorkplace(this);" flex="48" flex-xs="100"  >
     <md-icon class="material-icons">save</md-icon>
     <span class="md-inline-list-icon-label">{{'CONFIRM' | translate}}</span>   
 </md-button>
 <!--  -->
 {{Form}}++
-<div ng-init="design_10129(this)" style="display:none"></div>
+<div ng-init="getDoctorInfoById(this)" style="display:none"></div>
 		</div>
 	</div>
 </div>

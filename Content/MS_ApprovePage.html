@@ -1,0 +1,39 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/MS_ApprovePage.js?r=947438522','Design/goToDoctorSignUp.js?r=1298810413','Design/setPatientDashboard.js?r=1298810413']}">
+	<div ng-controller="goToDoctorSignUp"></div>
+<div ng-controller="setPatientDashboard"></div>
+
+	<div ng-controller="CtrlMS_ApprovePage">
+		<form id="formData" name="formData" layout-padding style="width: 450px">
+			<div layout="column" style="margin :0 auto">
+				<div layout="row" layout-align="center center" layout-padding>
+					<img style="width: 100px ; " src="../images/local_florist.png">
+				</div>
+				<div layout-padding layout="row" layout-align="center center">
+					<div  style="font-size: x-large;">
+						<span>{{'WELCOME_TO_MEDICALL' | translate}}</span>
+					</div>
+					<!--<div  style="font-size: x-large;">-->
+						<!--<span>{{'WELCOME_TO' | translate}}</span>-->
+						<!--<span style="color: #00C6D7;">{{'MEDICALL' | translate}}</span>-->
+					<!--</div>-->
+				</div>
+				<div layout-padding layout="row" layout-align="center center">
+					<div style="text-align: center;font-size: large;">
+						<span>{{'YOUR_REGISTRATION_HAS_SUCCESSFULLY_FINISHED' | translate}}</span>
+					</div>
+				</div>
+				<md-button
+						class="md-raised md-primary"
+						ng-click="makeDesign_272386();"
+						style="background-color: #052963; border-radius: 4px">
+					<span class="md-inline-list-icon-label">{{'GO_TO_YOUR_PERSONAL_DASHBOARD' | translate}}</span>
+				</md-button>
+				<md-button
+						class="md-inline-list-icon-label"
+						ng-click="goToDoctorSignUp(this);">
+					<span class="md-inline-list-icon-label" style="color: #052963;font-size: large;">{{'I_AM_A_PHYSICIAN' | translate}}</span>
+				</md-button>
+			</div>
+		</form>
+	</div> 
+</div> 

@@ -20,7 +20,7 @@ app = angular.module("APP").controller("Ctrl190556", ['$rootScope','$scope', '$h
 	
 	
 $scope.makeDesign_282752 = function(param){ 
-	 $rootScope.design_10150($scope,param); 
+	 $rootScope.patientSignOut($scope,param);
 } 
  
 

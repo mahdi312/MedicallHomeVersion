@@ -20,7 +20,7 @@ app = angular.module("APP").controller("Ctrl190535", ['$rootScope','$scope', '$h
 	
 	
 $scope.makeDesign_282641 = function(param){ 
-	 $rootScope.design_10142($scope,param); 
+	 $rootScope.DD_goToWeeklyProgram($scope,param); 
 } 
  
 

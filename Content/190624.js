@@ -87,27 +87,27 @@ app = angular.module("APP").controller("Ctrl190624", ['$rootScope','$scope', '$h
 	
 	
 $scope.makeDesign_293136 = function(param){ 
-	 $rootScope.design_20215($scope,param); 
+	 $rootScope.getFindData($scope,param); 
 } 
 
 $scope.makeDesign_293140 = function(param){ 
-	 $rootScope.design_20215($scope,param); 
+	 $rootScope.getFindData($scope,param); 
 } 
 
 $scope.makeDesign_293251 = function(param){ 
-	 $rootScope.design_20215($scope,param); 
+	 $rootScope.getFindData($scope,param); 
 } 
 
 $scope.makeDesign_293131 = function(param){ 
-	 $rootScope.design_20215($scope,param); 
+	 $rootScope.getFindData($scope,param); 
 } 
 
 $scope.makeDesign_293132 = function(param){ 
-	 $rootScope.design_20215($scope,param); 
+	 $rootScope.getFindData($scope,param); 
 } 
 
 $scope.makeDesign_303521 = function(param){ 
-	 $rootScope.design_30255($scope,param); 
+	 $rootScope.getPersonImage($scope,param);
 } 
  
 

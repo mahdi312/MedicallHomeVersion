@@ -20,11 +20,11 @@ app = angular.module("APP").controller("Ctrl190573", ['$rootScope','$scope', '$h
 	
 	
 $scope.makeDesign_293457 = function(param){ 
-	 $rootScope.design_10129($scope,param); 
+	 $rootScope.getDoctorInfoById($scope,param);
 } 
 
 $scope.makeDesign_282797 = function(param){ 
-	 $rootScope.design_20246($scope,param); 
+	 $rootScope.DD_changeToEditBio($scope,param);
 } 
  
 

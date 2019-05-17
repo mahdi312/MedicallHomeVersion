@@ -20,11 +20,11 @@ app = angular.module("APP").controller("Ctrl190615", ['$rootScope','$scope', '$h
 	
 	
 $scope.makeDesign_293047 = function(param){ 
-	 $rootScope.design_20200($scope,param); 
+	 $rootScope.doctorSignUpRemove($scope,param);
 } 
 
 $scope.makeDesign_293048 = function(param){ 
-	 $rootScope.design_20227($scope,param); 
+	 $rootScope.goToPreviousWindow($scope,param); 
 } 
  
 

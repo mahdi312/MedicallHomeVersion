@@ -17,15 +17,7 @@ app = angular.module("APP").controller("Ctrl190540", ['$rootScope','$scope', '$h
 		$rootScope.getInitData(variable,staticData,baseUrlId,url,param,scope);
 	}
 	//End For Dialog
-	
-	
-$scope.makeDesign_282648 = function(param){ 
-	 $rootScope.design_10123($scope,param); 
-} 
- 
 
- 
- 
  $rootScope.showAdvanced = function (ev,template,param) {
 	$rootScope.__param = param;
 	$mdDialog.show({

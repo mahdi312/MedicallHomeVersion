@@ -1,0 +1,28 @@
+<!--	
+<div ng-init="skinPath='Skin/skin1/'"></div>	
+<div ng-include="skinPath+'toolbar.html?r='+rand" ng-init="pageContent=(contents|filter:{pageContentId:pageContentId})[0]"></div>
+-->
+
+<div ng-init="contents =
+    [
+    {'index':0,'pageContentId':'MS_FirstPage','contentId':'160278', 'title':'firstPage','icon':'home'},
+    {'index':1,'pageContentId':'MS_NationalCode','contentId':'160280', 'title':'signIn','icon':'security'},
+    {'index':2,'pageContentId':'MS_CellPhone','contentId':'160279', 'title':'cellPhone','icon':'phone'},
+    {'index':3,'pageContentId':'MS_VerifyPage_PHNP','contentId':'160281', 'title':'verifyPage','icon':'person'},
+    {'index':4,'pageContentId':'MS_VerifyPage_FT','contentId':'160418', 'title':'verifyPage','icon':'person'},
+    {'index':5,'pageContentId':'MS_VerifyPage_PHP','contentId':'160281', 'title':'verifyPage','icon':'person'},
+    {'index':6,'pageContentId':'MS_ApprovePage','contentId':'160282', 'title':'approvePage','icon':'how_to_reg'},
+    {'index':7,'pageContentId':'MS_PatientPassword','contentId':'160283', 'title':'Password','icon':'code'},
+    {'index':8,'pageContentId':'MS_DoctorPassword','contentId':'160283', 'title':'Password','icon':'code'},
+    {'index':9,'pageContentId':'MS_SecretaryPassword','contentId':'160283', 'title':'Password','icon':'code'},
+    {'index':10,'pageContentId':'MS_SetSecretaryPassword','contentId':'160383', 'title':'setSecPass','icon':'info'}
+    ]
+    ;selectedContent();">
+</div>
+<div ng-include="'Content/'+pageContentId+'.html?r='+rand"
+     layout="column"
+     style="height: calc(100vh - 150px);"
+     layout-align="center center">
+</div>
+
+

@@ -1,6 +1,6 @@
-<div oc-lazy-load="{name:'myApp',files:['Content/190624.js?r=326348164','Design/design20215.js?r=326348164','Design/design30255.js?r=326348164','scripts/ngMask.min.js','scripts/md-input.css','scripts/persian-date.js']}">
-<div ng-controller="Design_20215"></div>
-<div ng-controller="Design_30255"></div>
+<div oc-lazy-load="{name:'myApp',files:['Content/190624.js?r=326348164','Design/getFindData.js?r=326348164','Design/getPersonImage.js?r=326348164','scripts/ngMask.min.js','scripts/md-input.css','scripts/persian-date.js']}">
+<div ng-controller="getFindData"></div>
+<div ng-controller="getPersonImage"></div>
 <div ng-controller="Ctrl190624">
 	<div class="marginAndPaddingZero">
 		<form id="formData" name="formData" class="marginAndPaddingZero" layout-padding >
@@ -134,7 +134,7 @@
 						<div flex="100" layout="row" layout-align="space-between center">
 							<div layout="row">
 								<div style="margin-right: 6px;" ng-class="{'menImgClass': find.gender == 'مرد','womanImgClass': find.gender == 'زن'}" class="docPicList" layout="row" layout-align="center center">
-									<img init="design_30255(this,find.person_id)"
+									<img init="getPersonImage(this,find.person_id)"
 										 ng-src="{{picUrl+picResult}}"
 									/>
 								</div>
@@ -320,5 +320,5 @@
 		background-image: url('../images/Woman.jpg');
 	}
 </style>
-<div ng-init="design_30255(this)" style="display:none"></div></div>
+<div ng-init="getPersonImage(this)" style="display:none"></div></div>
 	</div>

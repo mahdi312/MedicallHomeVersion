@@ -31,10 +31,6 @@ function ($rootScope,$scope, $http,$q, $filter,$translate,$mdToast,$http,NgTable
 		$scope.$parent.$parent.$parent.$parent.$parent.pageContentId = pageContentId;
 		$scope.$parent.$parent.$parent.$parent.$parent.keys = keys;
 	}
-	
-
-	
-	
 }]);
 app.requires.push('ngMaterial','ngStorage','oc.lazyLoad','pascalprecht.translate','ngMessages','ngTable');
 
