@@ -1,22 +1,57 @@
 <div oc-lazy-load="{name:'myApp',files:['Content/DD_DoctorSideNav.js?r=1574298547','Design/doctorSignOut.js?r=803770619']}">
-	<div ng-controller="doctorSignOut"></div>
+    <div ng-controller="doctorSignOut"></div>
 
-	<div ng-controller="CtrlDD_DoctorSideNav">
-	    <form id="formData" name="formData">
-			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
-	<div flex="100" layout-wrap layout="row" layout-align="center center">
-		<div flex="60" flex-xs="100" layout-padding >
-			<div flex="100" layout-wrap layout="row">
-<md-button  
-	class="md-raised md-primary" 
-	ng-click="makeDesign_293459();" flex="100" flex-xs="100"  >
-    <md-icon class="material-icons">security</md-icon>
-    <span class="md-inline-list-icon-label">{{'SIGN_OUT' | translate}}</span>   
-</md-button>
-<!--  --></div>  
-		</div>
-	</div>
+    <div ng-controller="CtrlDD_DoctorSideNav">
+        <form id="formData" name="formData" layout-padding style="width: 100px">
+            <div layout="column" layout-align="start start" style="margin :0 auto">
+                <md-button layout-align="start start"  class="sideNav-button"
+                        class="md-inline-list-icon-label"
+                        ng-click="">
+                    <span class="md-inline-list-icon-label">{{'USER_PROFILE' | translate}}</span>
+                </md-button>
+                <md-button class="sideNav-button"
+                        class="md-inline-list-icon-label"
+                        ng-click="">
+                    <span class="md-inline-list-icon-label" >{{'SETTING' | translate}}</span>
+                </md-button>
+                <md-button class="sideNav-button"
+                        class="md-inline-list-icon-label"
+                        ng-click="">
+                    <span class="md-inline-list-icon-label" >{{'OFFICE_MANAGEMENT' | translate}}</span>
+                </md-button>
+                <md-button class="sideNav-button"
+                        class="md-inline-list-icon-label"
+                        ng-click="">
+                    <span class="md-inline-list-icon-label" >{{'SECRETARY_MANAGEMENT' | translate}}</span>
+                </md-button>
+                <md-button class="sideNav-button"
+                        class="md-inline-list-icon-label"
+                        ng-click="">
+                    <span class="md-inline-list-icon-label" >{{'CARTABLE' | translate}}</span>
+                </md-button>
+                <md-button class="sideNav-button"
+                        class="md-inline-list-icon-label"
+                        ng-click="">
+                    <span class="md-inline-list-icon-label" >{{'DIALOGUE_PANEL' | translate}}</span>
+                </md-button>
+                <md-button class="sideNav-button"
+                        class="md-inline-list-icon-label"
+                        ng-click="">
+                    <span class="md-inline-list-icon-label" >{{'REPORTS' | translate}}</span>
+                </md-button>
+                <md-button class="sideNav-button"
+                        class="md-inline-list-icon-label"
+                        ng-click="">
+                    <span class="md-inline-list-icon-label" >{{'SUPPORT' | translate}}</span>
+                </md-button>
+            </div>
+        </form>
+    </div>
 </div>
-		</form>
-	</div> 
-</div> 
+<style>
+    .sideNav-button{
+        color: white;
+        font-size: small;
+        text-align: start;
+    }
+</style>

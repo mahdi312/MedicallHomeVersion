@@ -13,32 +13,45 @@ app.controller("dashboardCTRL", [
         };
         $rootScope.dashboardParam["drDashboard"] = {
             "skin": "skin1",
-            "barColor": "orange",
+			"toolbarColor":"#00d7b1",
+			"logoColor":"#00d7b1",
+			"logoBackgroundColor":"#052963",
+            "barColor": "blue",
             "searchPageContentId": "190624",
             "sideNavPageContentId": "DD_DoctorSideNav",
             "pages": []
         };
         $rootScope.dashboardParam["secretaryDashboard"] = {
             "skin": "skin1",
-            "barColor": "green",
+			"toolbarColor":"#00C6D7",
+			"logoColor":"#00C6D7",
+			"logoBackgroundColor":"#052963",
+            "barColor": "blue",
             "searchPageContentId": "190624",
             "sideNavPageContentId": "SD_SecretarySideNav",
             "pages": []
         };
         $rootScope.dashboardParam["patientDashboard"] = {
             "skin": "skin1",
+			"toolbarColor":"#00C6D7",
+			"logoColor":"#00C6D7",
+			"logoBackgroundColor":"#052963",
             "barColor": "blue",
-            "searchPageContentId": "190624",
+			"searchPageContentId": "190624",
             "sideNavPageContentId": "PD_PatientSideNav",
             "pages": []
         };
         $rootScope.dashboardParam["mainDashboard"] = {
             "skin": "skin2",
-            "barColor": "red",
+			"toolbarColor":"#00C6D7",
+			"logoColor":"#00C6D7",
+			"logoBackgroundColor":"#052963",
+            "barColor": "blue",
             "searchPageContentId": "190624",
             "sideNavPageContentId": "PD_PatientSideNav",
             "pages": []
         };
+
 
         // panels
         $rootScope.panels["viewerPanel"] = [];
@@ -74,6 +87,9 @@ app.controller("dashboardCTRL", [
             $rootScope.panelName = panel;
             $rootScope.skinPath = 'Skin/' + $rootScope.dashboardParam[dashboard].skin + '/';
             $rootScope.barColor = $rootScope.dashboardParam[dashboard].barColor;
+            $rootScope.toolbarColor = $rootScope.dashboardParam[dashboard].toolbarColor;
+            $rootScope.logoColor = $rootScope.dashboardParam[dashboard].logoColor;
+            $rootScope.logoBackgroundColor = $rootScope.dashboardParam[dashboard].logoBackgroundColor;
             if (panel != "viewerPanel") {
                 $rootScope.dashboardParam[dashboard].pages = $rootScope.panels[panel];
             }
@@ -89,6 +105,9 @@ app.controller("dashboardCTRL", [
             ;
             $rootScope.skinPath = 'Skin/' + $rootScope.dashboardParam[dashboard].skin + '/';
             $rootScope.barColor = $rootScope.dashboardParam[dashboard].barColor;
+            $rootScope.toolbarColor = $rootScope.dashboardParam[dashboard].toolbarColor;
+            $rootScope.logoColor = $rootScope.dashboardParam[dashboard].logoColor;
+            $rootScope.logoBackgroundColor = $rootScope.dashboardParam[dashboard].logoBackgroundColor;
             if (panel != "viewerPanel") {
                 $rootScope.dashboardParam[dashboard].pages = $rootScope.panels[panel];
             }

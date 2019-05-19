@@ -13,7 +13,7 @@ angular.module("APP").controller("doctorSignUpRemove", ['$rootScope', '$scope', 
                 // Design : clearLocalStorage
                 $rootScope.clearLocalStorage($scope);
                 // Navigate : Sign Up/signIn
-                $scope.navigateULR("MemberShip", "MS_NationalCode");
+                $rootScope.setDashboard("mainDashboard","mainPanel");
             }
         };
         $rootScope.sendData($scope, url, null, 'Get', 'callBack_20200');

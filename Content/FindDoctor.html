@@ -1,0 +1,330 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190624.js?r=326348164','Design/getFindData.js?r=326348164','Design/getPersonImage.js?r=326348164','scripts/ngMask.min.js','scripts/md-input.css','scripts/persian-date.js','Design/setPatientDashboard.js?r=1816181259']}">
+	<div ng-controller="getFindData"></div>
+	<div ng-controller="getPersonImage"></div>
+	<div ng-controller="setPatientDashboard"></div>
+	<div ng-controller="Ctrl190624">
+
+		<div style="font-size: 10px;background-color: #f6f4ff;" layout="row" layout-align="end end">
+			<div>بازگشت</div>
+			<div><md-icon style="color:black;cursor:pointer;outline:none" ng-click="navigateULR('PatientDashboard_FirstPage','PD_FirstPage')">keyboard_backspace</md-icon></div>
+		</div>
+		<div class="marginAndPaddingZero">
+			<form id="formData" name="formData" class="marginAndPaddingZero" layout-padding >
+				<div class="findNavbar" layout="row" layout-align="center center" layout-wrap>
+					<div flex="75" layout="row">
+						<div flex="100" layout="row" class="searchInputIcon">
+							<div layout="row" layout-align="center center">
+								<md-icon style="color: #052963;margin: 5px;">search</md-icon>
+							</div>
+							<div flex="100">
+								<input placeholder="جستجوی سریع" class="findInput" ng-model="Form.input">
+							</div>
+						</div>
+					</div>
+					<div flex="15">
+						<md-button
+								class="findButton"
+								flex-gt-sm class="md-block"
+								class="md-primary"
+								ng-click="makeDesign_293251();">
+							<span class="md-inline-list-icon-label">{{'جستجو' | translate}}</span>
+						</md-button>
+					</div>
+					<div flex="75">
+						<div flex="100" layout="row" layout-align="space-between center">
+							<div flex="20" class="findCitySelectBoxDiv" layout="row">
+								<md-select id="cityComboBox" flex="100"
+										   class="findCityComboBox"
+										   md-on-open="getDynamicData('__cityList','','0','/base/list/city','country',[],this)"
+										   ng-model="Form.city.id" placeholder="{{'شهر' | translate}}">
+									<md-option ng-repeat="item in __cityList" value="{{item.id}}">
+										{{item.name}}
+									</md-option>
+								</md-select>
+							</div>
+							<div layout="row" layout-align="space-between center" class="findGenderDiv">
+								<div layout="row" layout-align="center center">
+									<md-icon style="margin: 5px;color: #032a61;">supervisor_account</md-icon>
+									<md-input-container class="marginAndPaddingZero" class="md-block" flex-gt-sm>
+										<md-radio-group class="marginAndPaddingZero" flex-gt-sm layout-padding layout="row"
+														ng-model="Form.person.gender.id">
+											<md-radio-button
+													ng-repeat="item in [{'title':'MALE','id':11},{'title':'FEMALE','id':12},{'title':'NO_DIFFRENCE','id':13}]"
+													class="md-primary" value="{{item.id}}">{{item.title|translate}}
+											</md-radio-button>
+										</md-radio-group>
+									</md-input-container>
+								</div>
+							</div>
+							<div layout="row" class="findTimeDiv">
+								<div layout="row" layout-align="center center">
+									<md-icon style="margin: 5px;color: #032a61;">schedule</md-icon>
+									<md-input-container class="marginAndPaddingZero" class="md-block" flex-gt-sm>
+										<md-radio-group class="marginAndPaddingZero" flex-gt-sm layout-padding layout="row"
+														ng-model="Form.person.time.id">
+											<md-radio-button
+													ng-repeat="item in [{'title':'TODAY','id':1},{'title':'THREE_DAYS_LATER','id':2},{'title':'ONE_WEEK_LATER','id':3},{'title':'NO_DIFFRENCE','id':4}]"
+													class="md-primary" value="{{item.id}}">{{item.title|translate}}
+											</md-radio-button>
+										</md-radio-group>
+									</md-input-container>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div flex="15">
+						<md-button
+								class="findAdvanceButton"
+								flex-gt-sm class="md-block"
+								class="md-primary"
+								ng-click="flag=!flag">
+							<md-icon style="color:#072a64;font-size: 28px;">
+								{{!flag?'keyboard_arrow_down':'keyboard_arrow_up'}}
+							</md-icon>
+							<span class="md-inline-list-icon-label">{{'جستجوی پیشرفته' | translate}}</span>
+						</md-button>
+					</div>
+				</div>
+				<div style="margin:0;padding:0;margin-top: 10px;" layout="row" layout-align="center center">
+					<div flex="90">
+						<div flex="100" class="findDateNavigatorFilterDiv" layout="row" layout-align="space-between center">
+							<div class="findFiletrDiv" layout="row">
+								<div style="color:#818286">مرتب سازی:</div>
+								<select
+										style="border: none;outline: none;"
+										ng-init="payment = options[0]"
+										name="type"
+										ng-model="payment"
+										ng-options="option.name for option in options">
+								</select>
+							</div>
+							<div style="color:black;font-size: 15px;">
+								<div class="marginAndPaddingZero" layout="row" layout-align="center center" layout-padding ng-init="setLocal('fa')">
+									<div layout="row" layout-align="center center">
+										<md-icon style="color:#062963;cursor: pointer;outline: none;" ng-click="next()">keyboard_arrow_right</md-icon>
+									</div>
+									<div layout="column" layout-align="center center" class="findDateNavigatorBlocks">
+										<div>{{todayDateName}}</div><!-- -->
+										<div style="color:#4bd0e1">{{todayDate}} {{todayMonthName}}</div>
+									</div>
+									<div layout="column" layout-align="center center" class="findDateNavigatorBlocks">
+										<div>{{tomarrowDateName}}</div>
+										<div style="color:#4bd0e1">{{tomarrowDate}} {{tomarrowMonthName}}</div>
+									</div>
+									<div layout="column" layout-align="center center" class="findDateNavigatorBlocks">
+										<div>{{dayAfterTomarrowDateName}}</div>
+										<div style="color:#4bd0e1">{{dayAfterTomarrowDate}} {{dayAfterTomarrowMonthName}}</div>
+									</div>
+									<div layout="row" layout-align="center center"><md-icon style="color:#062963;cursor: pointer;outline: none;" ng-click="last()">keyboard_arrow_left</md-icon></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--<div ng-show="flag">
+                    <div style="background-color:red;">
+                        gfd
+                    </div>
+                </div>-->
+			</form>
+		</div>
+		<!--<div layout="row" layout-padding>
+            <div class="countdownTimer" layout="row" layout-align="center center">{{counter | secondsToDateTime | date:'ss'}}</div>
+            <div layout="row" layout-align="center center" style="color:#676767;margin:0;padding:1px">:</div>
+            <div class="countdownTimer" layout="row" layout-align="center center">{{counter | secondsToDateTime | date:'mm'}}</div>
+        </div>-->
+		<div layout="row" layout-align="center center">
+			<div flex="90">
+				<md-content style="background: #f0f8ff00;" flex="100">
+					<md-card class="searchRusultHover" ng-repeat="find in findData" flex="100" flex-xs="100" >
+						<div flex="100" layout="row" layout-align="space-between center">
+							<div layout="row">
+								<div style="margin-right: 6px;" ng-class="{'menImgClass': find.gender == 'مرد','womanImgClass': find.gender == 'زن'}" class="docPicList" layout="row" layout-align="center center">
+									<img init="getPersonImage(this,find.person_id)"
+										 ng-src="{{picUrl+picResult}}"
+									/>
+								</div>
+								<div style="margin-right: 5px;" layout="column" layout-align="start start">
+									<div class="docNameList">
+										{{find.firstName}} {{find.lastName}}
+									</div>
+									<div class="docExpertiseList">
+										{{find.specialtyName}}
+									</div>
+									<div layout="row">
+										<star-rating class="star-rating"
+													 rating-value="rating"
+													 data-max="5" on-rating-selected="rateFunction(rating)"
+													 ng-init="rating = 1">
+										</star-rating>
+									</div>
+									<div layout="row" style="font-size: 15px">
+										<div class="docAddrTitle">{{ 'ADDRESS' | translate }}:</div>
+										<div class="docAddr">{{find.address_name}} ({{find.addressType}}) {{find.cityName}} - {{find.mandatory_address}} {{find.optional_address}}</div>
+									</div>
+									<div layout="row" class="docTellList" style="font-size: 15px">
+										<div class="docTellOffice">{{ 'TELL' | translate }}:</div><div>{{find.office_tel}},{{find.telephone}}</div>
+									</div>
+								</div>
+							</div>
+
+							<div layout="row" style="margin-left: 33px;">
+								<img src="../images/books.png" />
+							</div>
+						</div>
+					</md-card>
+				</md-content>
+			</div>
+		</div>
+		<style>
+
+			.countdownTimer{
+				background-color: #676767;
+				font-size: 15px;
+				margin: 0;
+				padding: 0;
+				width: 25px;
+				height: 25px;
+				border-radius: 4px;
+			}
+			.docPicList img {
+				width: 149px;
+				height: 162px;
+			}
+			.findDateNavigatorBlocks{
+				background: #dff7f9;
+				width: 131px;
+				height: 90px;
+				margin: 1px;
+			}
+			.findFiletrDiv{
+				border: 1px solid;
+				border-radius: 22px;
+				padding: 5px;
+				font-size: 15px;
+			}
+			.findDateNavigatorFilterDiv{
+				color:black;
+				background-color:white
+			}
+			.findAdvanceButton{
+				width:100%;
+				background-color:white;
+				color: #818286;
+				border-radius: 18px;
+			}
+			.findTimeDiv{
+				font-size:12px;
+				background-color: white;
+				color: black;
+				border-radius: 22px;
+			}
+			.findGenderDiv{
+				font-size:12px;
+				background-color: white;
+				color: black;
+				border-radius: 22px;
+			}
+			.findCityComboBox{
+				padding:0;
+				margin:0;
+				color: black;
+			}
+			.findCitySelectBoxDiv{
+				border: none;
+				border-radius: 22px;
+				padding: 5px;
+				font-size: 15px;
+				background-color:white
+			}
+			.findButton{
+				width: 100%;
+				background-color: #052963;
+				border-radius: 18px;
+				color: white;
+			}
+			.findInput{
+				width: 100%;
+				height: 35px;
+				border: none;
+				border-radius: 18px;
+				outline: none;
+				font-size: 15px;
+			}
+			.searchInputIcon{
+				background-color: white;
+				border-radius: 20px;
+			}
+			.findNavbar{
+				background-color:#f6f4ff
+			}
+			.marginAndPaddingZero{
+				margin:0;
+				padding:0;
+			}
+			.searchRusultHover:hover{
+				background: rgb(246, 244, 255);
+			}
+
+			.docNameList {
+				padding:0;
+				margin:0;
+				font-weight: bold;
+
+			}
+			.docExpertiseList {
+				font-size: 17px;
+				color: #0075bb;
+				margin-right: 5px;
+			}
+			.docBtnList button {
+				background: #7F345B !important;
+				border-radius: 5px;
+				color: #fff;
+			}
+			.docAddrTitle {
+				font-weight: bold;
+				margin: 0 10px;
+			}
+			.docTellList.layout-row {
+				margin: 3px;
+			}
+			.docTellOffice {
+				font-weight: bold;
+				margin: 0 10px;
+			}
+			.rating{
+				color: #a9a9a9;
+				margin: 0 10px;
+				padding: 0;
+				line-height: 16px;
+			}
+
+			ul.rating {
+				display: inline-block;
+			}
+
+			.rating li {
+				list-style-type: none;
+				display: inline-block;
+				padding: 1px;
+				text-align: center;
+				font-weight: bold;
+				cursor: pointer;
+			}
+			.rating .filled {
+				color: #c9beff;
+				outline:none;
+			}
+			#cityComboBox md-select-value {
+				border: none !important;
+			}
+			.menImgClass{
+				background-image: url('../images/Man.jpg');
+			}
+			.womanImgClass{
+				background-image: url('../images/Woman.jpg');
+			}
+		</style>
+		<div ng-init="getPersonImage(this)" style="display:none"></div></div>
+</div>

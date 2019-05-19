@@ -13,6 +13,8 @@ $rootScope.checkPatientPassword = function($scope,param,$event){
 		localStorage.setItem("__localStorage.__token" , data.jwt_token);
 		localStorage.setItem("__localStorage.__CLIENT_ID" , data.client_id);
 		localStorage.setItem("__localStorage.__patientId" , data.result);
+        localStorage.setItem("__localStorage.__loginTime", data.login_time);
+
 
         if (data.mdc_error_code == -1) {
             $rootScope.resultMsg(2, $filter('translate')(data.mdc_error_msg));

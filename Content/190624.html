@@ -1,7 +1,13 @@
-<div oc-lazy-load="{name:'myApp',files:['Content/190624.js?r=326348164','Design/getFindData.js?r=326348164','Design/getPersonImage.js?r=326348164','scripts/ngMask.min.js','scripts/md-input.css','scripts/persian-date.js']}">
+<div oc-lazy-load="{name:'myApp',files:['Content/190624.js?r=326348164','Design/getFindData.js?r=326348164','Design/getPersonImage.js?r=326348164','scripts/ngMask.min.js','scripts/md-input.css','scripts/persian-date.js','Design/setPatientDashboard.js?r=1816181259']}">
 <div ng-controller="getFindData"></div>
 <div ng-controller="getPersonImage"></div>
+<div ng-controller="setPatientDashboard"></div>
 <div ng-controller="Ctrl190624">
+
+<div style="font-size: 10px;background-color: #f6f4ff;" layout="row" layout-align="end end">
+	<div>بازگشت</div>
+	<div><md-icon style="color:black;cursor:pointer;outline:none" ng-click="navigateULR('PatientDashboard_FirstPage','PD_FirstPage')">keyboard_backspace</md-icon></div>
+</div>		
 	<div class="marginAndPaddingZero">
 		<form id="formData" name="formData" class="marginAndPaddingZero" layout-padding >
 			<div class="findNavbar" layout="row" layout-align="center center" layout-wrap>

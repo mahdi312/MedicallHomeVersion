@@ -208,12 +208,20 @@
 	"ABORT_OF_REGISTRATION": "Abort Of Registration",
 
 
+	"YOU_CAN_SEE_YOUR_FAVORITE_PHYSICIAN_IN_THIS_SECTION": "You Can See Your Favorite Physician In This Section",
+
+
 	"VISIT": "Visit",
 	"ARCHIVE_OF_MEDICALL_RECORDS": "Archive Of Medicall Records",
 	"SCHEDULE_A_PATIENT": "Schedule A Patient",
 	"OFFICE_MANAGEMENT": "Office Management",
 	"SUMMARY_OF_REPORTS": "Summary Of Reports",
-
+	"USER_PROFILE": "User Profile",
+	"SECRETARY_MANAGEMENT": "Secretary Management",
+	"CARTABLE": "Cartable",
+	"DIALOGUE_PANEL": "Dialogue Panel",
+	"REPORTS": "Reports",
+	"SUPPORT": "Support",
 
 
 	"YEAR": "yyyy",

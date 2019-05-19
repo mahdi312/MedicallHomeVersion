@@ -7,7 +7,7 @@
 
     <div ng-controller="CtrlDSU_AccountInformation">
         <form id="formData" name="formData" style="width: 800px">
-            <div layout="column" style="margin :0 auto">
+            <div layout="column">
                 <div ng-init="doctorSignUpStatus(this)" style="display:none"></div>
                 <div layout="row" layout-align="center center">
                     <md-icon style="height: 110px;
@@ -17,15 +17,13 @@
                                 color: #00c6d7;">person
                     </md-icon>
                 </div>
-                <div layout="row" layout-align="center center">
+                <div layout="row" layout-padding layout-align="center center">
                     <div style="text-align: center">
                         <span style="font-size:15px">{{'PLEASE_ENTER_YOUR_ACCOUNT_INFORMATION' | translate}}</span>
                     </div>
                 </div>
 
-                <div layout="row"
-                     layout-align="center center"
-                     layout-wrap>
+                <div layout="row" flex="90" layout-align="center center" layout-padding>
                     <md-input-container flex="45" class="margin-padding-zero">
                         <md-icon>person</md-icon>
                         <div class="md-errors-spacer" style="display: none;">
@@ -77,32 +75,30 @@
                         </div>
                     </md-input-container>
                 </div>
-                <div layout="row"
-                     ayout-align="center center"
-                     layout-wrap>
+                <div layout="row" flex="90" layout-align="center start">
                     <md-input-container flex="45" class="margin-padding-zero">
                         <md-icon>wc</md-icon>
                         <md-select required
                                    name="gender"
-                                   ng-init="(patientInfo.person.gender.title!=null)?patientInfo.person.gender.title:''"
                                    md-on-open="getDynamicData('__genderList',[{'title':'مرد','id':'11'},{'title':'زن','id':'12'}],'','','',[],this)"
                                    ng-model="patientInfo.person.gender"
                                    placeholder="{{'GENDER' | translate}}">
-                            <md-option ng-repeat="item in __genderList" value="{{item.id}}">
+                            <md-option  ng-repeat="item in __genderList" value="{{item.id}}">
                                 {{item.title}}
                             </md-option>
                         </md-select>
                     </md-input-container>
-                    <div ng-init="=setFilterForDate('','','','')"></div>
-                    <div ng-init="=setFilterForDate('','','','')"></div>
+
                     <div ng-init="patientInfo.person.birthDate=setStandardDate()"></div>
 
                     <md-input-container id="datePickerId" flex="45" class="margin-padding-zero">
                         <label>{{'BIRTH_DATE'| translate }}</label>
-                        <md-persian-datepicker
-                                ng-model="patientInfo.person.birthDate"
-                                name="birthDate">
-                        </md-persian-datepicker>
+                        <div id="birthDateInputWidth">
+                            <md-persian-datepicker
+                                    ng-model="patientInfo.person.birthDate"
+                                    name="birthDate">
+                            </md-persian-datepicker>
+                        </div>
                         <div ng-messages="formData.birthDate.$error" role="alert">
                             <div ng-message="required" class="my-message">
                                 {{ 'BIRTH_DATE_IS_REQUIRED' | translate }}
@@ -143,4 +139,13 @@
             </div>
         </form>
     </div>
-</div> 
+</div>
+<style>
+    #birthDateInputWidth md-persian-datepicker input {
+        width: 310px !important;
+        border: none;
+    }
+    #birthDateInputWidth .md-button.md-icon-button {
+        margin:0
+    }
+</style>

@@ -9,25 +9,25 @@ $rootScope.getDoctorSignUpStatus = function($scope,param,$event){
 		$scope.patientInfo = {} ;
 		$scope.patientInfo = data ; 
 		if(data.membershipStatus === 0){
-		$rootScope.setDashboard("patientDashboard","patientToDoctorPanel");
+		$rootScope.setDashboard("mainDashboard","patientToDoctorPanel");
 		 	// Navigate : DoctorSignUp/PHYSICIAN_COUNCIL_CODE
 		 	$scope.navigateULR("DoctorSignUp","DSU_PhysicianCouncilCode");
 		}
 		
 		if(data.membershipStatus == 1){
-		    $rootScope.setDashboard("patientDashboard","patientToDoctorPanel");
+		    $rootScope.setDashboard("mainDashboard","patientToDoctorPanel");
 		 	// Navigate : DoctorSignUp/ACCOUNT_INFO
 		 	$scope.navigateULR("DoctorSignUp","DSU_AccountInformation");
 		}
 		
 		if(data.membershipStatus == 2){
-		    $rootScope.setDashboard("patientDashboard","patientToDoctorPanel");
+		    $rootScope.setDashboard("mainDashboard","patientToDoctorPanel");
 		 	// Navigate : DoctorSignUp/SET_PASSWORD
 		 	$scope.navigateULR("DoctorSignUp","DSU_SetPassword");
 		}
 		
 		if(data.membershipStatus == 3){
-		    $rootScope.setDashboard("patientDashboard","patientToDoctorPanel");
+		    $rootScope.setDashboard("mainDashboard","patientToDoctorPanel");
 		 	// Navigate : DoctorSignUp/SPECIALITY
 		 	$scope.navigateULR("DoctorSignUp","DSU_Specialty");
 		}

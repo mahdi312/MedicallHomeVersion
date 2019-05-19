@@ -1,5 +1,7 @@
 app = angular.module("APP").controller("patientDashboardCtrl", ['$rootScope','$scope', '$http','$q','$filter','$translate','$mdToast', function ($rootScope,$scope, $http,$q, $filter,$translate,$mdToast){
-
+	$rootScope.loginTime=localStorage.getItem("__localStorage.__loginTime");
+	//$rootScope.loginTime.format('jYYYY/jM/jD')
+	//$rootScope.a=new Date($rootScope.loginTime);
 	// angularJs-Content -> TemplateType
 	// For Dialog 
 	$scope.getDynamicData = function(variable,staticData,baseUrlId,url,catalog,filter,$scope){

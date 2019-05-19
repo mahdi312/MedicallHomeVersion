@@ -5,7 +5,7 @@ angular.module("APP").controller("getDoctorInfoById", ['$rootScope', '$scope', '
 $rootScope.getDoctorInfoById = function($scope,param,$event){
 	$scope.doctorId = localStorage.getItem("__localStorage.__doctorId");
 	
-	url= 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/account/doctor/'+$scope.doctorId+'';
+	url= 'http://172.16.201.212:8081/rest/api/v1/account/doctor/'+$scope.doctorId+'';
 	$scope.callBack_10129 = function(data){
 		$scope.DocInfo = {} ;
 		$scope.DocInfo = data;

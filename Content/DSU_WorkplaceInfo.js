@@ -1,5 +1,25 @@
 app = angular.module("APP").controller("CtrlDSU_WorkplaceInfo", ['$rootScope','$scope', '$http','$q','$filter','$translate','$mdToast','$http', function ($rootScope,$scope, $http,$q, $filter,$translate,$mdToast,$http){
-
+    $rootScope.labelTxt=$filter('translate')('WORKPLACE_POSTAL_CODE');
+    $rootScope.labelTxt2=$filter('translate')('WORKPLACE_MAIN_ADDRESS');
+    $rootScope.getTxt=function(){
+        var txt = $scope.Form.addressType;
+            if(txt==19) {
+            $rootScope.labelTxt = $filter('translate')('OFFICE_POSTAL_CODE');
+            $rootScope.labelTxt2 = $filter('translate')('OFFICE_MAIN_ADDRESS');
+        }
+        else if(txt==21) {
+            $rootScope.labelTxt = $filter('translate')('CLINIC_POSTAL_CODE');
+            $rootScope.labelTxt2 = $filter('translate')('CLINIC_MAIN_ADDRESS');
+        }
+        else if(txt==22) {
+            $rootScope.labelTxt = $filter('translate')('HOSPITAL_POSTAL_CODE');
+            $rootScope.labelTxt2 = $filter('translate')('HOSPITAL_MAIN_ADDRESS');
+        }
+        else if(txt==23) {
+            $rootScope.labelTxt = $filter('translate')('DOCTORS_BUILDING_POSTAL_CODE');
+            $rootScope.labelTxt2 = $filter('translate')('DOCTORS_BUILDING_MAIN_ADDRESS');
+        }
+    };
 	// angularJs-Content -> TemplateType
 	// For Dialog 
 	$scope.getDynamicData = function(variable,staticData,baseUrlId,url,catalog,filter,$scope){

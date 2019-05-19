@@ -1,39 +1,71 @@
-<div oc-lazy-load="{ name: 'YourApp', files: [skinPath+'js/account.js?r='+rand,skinPath+'css/account.css?r='+rand] }">
-	<div ng-controller="accountCtrl">		
-		<div layout="row" layout-align="end center">
-			<md-menu>
-				<md-button layout="row" class="md-icon-button" aria-label="Open demo menu" ng-click="$mdMenu.open($event)">			
-					<img ng-src="{{doctorDashboardData.showPic}}" 
-					ng-hide='doctorDashboardData.showPic==null || doctorDashboardData.showPic =="" ' 
-					width="50px" height="50px"/>
-					<div><md-icon class="toolbarIcons" ng-show="doctorDashboardData.showPic==null">account_circle</md-icon></div>			
+<div oc-lazy-load="{ name: 'YourApp', files: [skinPath+'js/account.js?r='+rand,skinPath+'css/account.css?r='+rand,'Design/getPatientInfoByID.js?r=369374463','Design/getPersonImage.js?r=326348164','scripts/moment-jalaali.js?r=369374463'] }">
+	<div ng-controller="getPatientInfoByID"></div>
+	<div ng-init="getPatientInfoByID(this)"></div>
+	<div ng-controller="getPersonImage"></div>
+	<div ng-init="getPersonImage(this)" style="display:none"></div>
+	<div ng-controller="accountCtrl">	
+	
+		<div layout="row" layout-align="center center">
+		
+			<md-menu md-offset="0 64" md-position-mode="target-right target">
+				<md-button style="margin:0" layout="row" class="md-icon-button" aria-label="Open demo menu" ng-click="$mdMenu.open($event)">
+					<!--<div style="margin-right: 6px;" ng-class="{'menImgClass': PatientInfo.gender.id == 11,'womanImgClass': PatientInfo.gender.id == 12}"  layout="row" layout-align="center center">
+						<img ng-init="getPersonImage(this,PatientInfo.id)"
+							 ng-src="{{picUrl+picResult}}"
+						/>
+					</div>-->
+					<md-icon>person</md-icon>
 				</md-button>
-				<md-menu-content class="accountMenu" width="4">
-					<md-menu-item layout-padding>
-						<div layout-padding>Will Smit</div>
+				
+				<md-menu-content width="4">
+					<md-menu-item>
+						<div layout="row" layout-align="center center">میزکار شخصی</div>
+					</md-menu-item>
+					<md-menu-item>
+						<div layout="row" layout-align="center center" layout-padding>{{PatientInfo.firstName}} {{PatientInfo.lastName}}</div>
 					</md-menu-item>
 					<md-menu-divider></md-menu-divider>
 					<md-menu-item>
-					  <md-button ng-click="myAccount()">
-						<md-icon class="extraIcons">account_box</md-icon>
-							My account
-					  </md-button>
-					</md-menu-item>
-					<md-menu-item>
-					  <md-button>
-						<md-icon class="extraIcons">notifications_none</md-icon>
-							Notification
-					  </md-button>
+						<div layout="row" layout-align="space-between center">
+							<div>{{loginTime | date:"hh:mm yyyy/MM/dd"}}</div>
+							<div>آخرین ورود</div>
+						</div>
 					</md-menu-item>
 					<md-menu-divider></md-menu-divider>
 					<md-menu-item>
-					  <md-button ng-click="console.log('signOut');setDashboard('mainDashboard','mainPanel')">
-						<md-icon class="extraIcons">exit_to_app</md-icon>
-							Sign In/Out
-					  </md-button>
+						<div flex="100" style="margin: 0;padding: 0;" layout="row" layout-align="start start">
+							<md-button flex="100">
+								خانه
+								<md-icon class="extraIcons">home</md-icon>
+							</md-button>
+						</div>
+					</md-menu-item>
+					<md-menu-divider></md-menu-divider>
+					<md-menu-item>
+						<div flex="100"  style="margin: 0;padding: 0;" layout="row" layout-align="end end">
+							<md-button flex="100"  ng-confirm-click={{'EXIT_CONFIRM'|translate}}
+							confirmed-click="patientSignOut(this)">
+								خروج
+								<md-icon class="extraIcons">exit_to_app</md-icon>
+							</md-button>
+						</div>
 					</md-menu-item>
 				</md-menu-content>
 			</md-menu>
+			<div style="font-size: 12px;" layout="row" layout-align="center center">
+				<div>{{PatientInfo.firstName}} </div>
+				<span> </span>
+				<div>{{PatientInfo.lastName}}</div>
+				<div><md-icon style="color:white">keyboard_arrow_down</md-icon></div>
+			</div>
 		</div>
 	</div>
 </div>
+<style>
+.menImgClass{
+	background-image: url('../images/Man.jpg');
+}
+.womanImgClass{
+	background-image: url('../images/Woman.jpg');
+}
+</style>

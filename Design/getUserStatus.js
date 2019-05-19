@@ -54,12 +54,21 @@ angular.module("APP").controller("getUserStatus", ['$rootScope', '$scope', '$htt
                     // Navigate : Sign Up/setSecPass
                     $scope.navigateULR("MemberShip", "MS_SetSecretaryPassword");
                 }
+
+
+                if (data.lang == 51) {
+                    localStorage.setItem("__localStorage.__lang", 'Fa');
+                    $rootScope.changeLanguage('Fa');
+                    $rootScope.changeLanText('Fa');
+                } else if (data.lang == 52) {
+                    localStorage.setItem("__localStorage.__lang", 'En');
+                    $rootScope.changeLanguage('En');
+                    $rootScope.changeLanText('En');
+                }
             }
-        }
-        ;
+        };
         $rootScope.sendData($scope, url, null, 'Get', 'callBack_10092');
-    }
-    ;
+    };
 
 
 }

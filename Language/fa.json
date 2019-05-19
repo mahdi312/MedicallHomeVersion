@@ -201,6 +201,8 @@
 	"ABORT_OF_REGISTRATION":"لغو عملیات",
 	"NEW":"جدید",
 
+
+	"YOU_CAN_SEE_YOUR_FAVORITE_PHYSICIAN_IN_THIS_SECTION": "در این بخش میتوانید پزشک مورد نظرتان را بیابید." ,
 	"PHYSICIAN_INFO": "اطلاعات پزشک",
 	"CONTACTS": "اطلاعات تماس",
 	"WORKPLACE2": "اطلاعات محل کار",
@@ -215,7 +217,12 @@
 	"SCHEDULE_A_PATIENT": "نوبت دهی",
 	"OFFICE_MANAGEMENT": "مدیریت مطب",
 	"SUMMARY_OF_REPORTS": "خلاصه گزارشات",
-
+	"USER_PROFILE": "پروفایل کاربری",
+	"SECRETARY_MANAGEMENT": "مدیریت منشی",
+	"CARTABLE": "کارتابل",
+	"DIALOGUE_PANEL": "پنل گفتگو",
+	"REPORTS": "گزارشات",
+	"SUPPORT": "پشتیبانی",
 
 	"WORKPLACE":"محل کار",
 	"PERSONAL_INFO":"اطلاعات شخصی",

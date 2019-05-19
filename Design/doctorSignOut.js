@@ -4,11 +4,9 @@ angular.module("APP").controller("doctorSignOut", ['$rootScope', '$scope', '$htt
 
 $rootScope.doctorSignOut = function($scope,param,$event){
 	$scope.doctorId = localStorage.getItem("__localStorage.__doctorId");
-	//localStorage.clear();
-	
+	localStorage.clear();
 	$rootScope.setDashboard("mainDashboard","mainPanel");
-	
-	
+
 	url= 'http://172.16.201.212:8081/rest/api/v1/account/signout/doctor/'+$scope.doctorId+'';
 	$scope.callBack_10149 = function(data){
         if (data.mdc_error_code == -1) {

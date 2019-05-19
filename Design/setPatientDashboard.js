@@ -4,6 +4,9 @@ angular.module("APP").controller("setPatientDashboard", ['$rootScope', '$scope',
 
 $rootScope.setPatientDashboard = function($scope,param,$event){
 	$rootScope.setDashboard("patientDashboard","patientProfilePanel");
+	var lang = localStorage.getItem("__localStorage.__lang");
+        $rootScope.changeLanguage(lang);
+        $rootScope.changeLanText(lang);
 };
 } 
 ]);

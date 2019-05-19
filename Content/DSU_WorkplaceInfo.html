@@ -7,7 +7,7 @@
 
     <div ng-controller="CtrlDSU_WorkplaceInfo">
 
-        <form id="formData" name="formData" layout-padding style="width: 750px">
+        <form id="formData" name="formData"  style="width: 750px">
             <div layout="column" style="margin :0 auto">
                 <div layout="row" layout-align="center center">
                     <md-icon style="height: 110px;
@@ -17,18 +17,18 @@
                                 color: #00c6d7;">domain
                     </md-icon>
                 </div>
-                <div layout="row" layout-align="center center">
+                <div layout="row" layout-align="center center" layout-padding>
                     <div style="text-align: center ; font-size: small ; padding: 0px;">
                         <span>{{'PLEASE_ENTER_YOUR_WORKPLACE_INFORMATION' | translate}}</span>
                     </div>
                 </div>
 
-                <div layout="row" layout-wrap layout-align="center center">
-                    <md-input-container flex="45" class="margin-padding-zero" >
+                <div layout="row" layout-wrap layout-align="center center" >
+                    <md-input-container flex="45" style="bottom: 10px" >
                         <md-icon>domain</md-icon>
                         <md-select required
                                    md-on-open="getDynamicData('__addresstype','','0','/base/list/catalogdetail/ADDRESS_TYPE','',[],this)"
-                                   ng-model="Form.addressType" placeholder="{{'ADDRESS_TYPE' | translate}}">
+                                   ng-model="Form.addressType" placeholder="{{'ADDRESS_TYPE' | translate}}" ng-change="getTxt()">
                             <md-option ng-repeat="item in __addresstype" value="{{item.id}}">
                                 {{item.description}}
                             </md-option>
@@ -47,11 +47,7 @@
                                name="postalCode"
                                required
                                valid-number>
-                        <label ng-if="Form.addressType==null">{{'WORKPLACE_POSTAL_CODE'| translate }}</label>
-                        <label ng-if="Form.addressType==19">{{'OFFICE_POSTAL_CODE'| translate }}</label>
-                        <label ng-if="Form.addressType==21">{{'CLINIC_POSTAL_CODE'| translate }}</label>
-                        <label ng-if="Form.addressType==22">{{'HOSPITAL_POSTAL_CODE'| translate }}</label>
-                        <label ng-if="Form.addressType==23">{{'DOCTORS_BUILDING_POSTAL_CODE'| translate }}</label>
+                        <label>{{labelTxt}}</label>
                         <div class="hint">{{'' | translate }}</div>
                         <div ng-messages="formData.postalCode.$error" role="alert">
                             <div ng-message="required" class="my-message">
@@ -67,7 +63,7 @@
                     </md-input-container>
                 </div>
                 <div layout="row" layout-wrap layout-align="center center">
-                    <md-input-container flex="45" class="margin-padding-zero">
+                    <md-input-container flex="45" style="bottom: 10px">
                         <md-icon>location_city</md-icon>
                         <md-select required
                                    md-on-open="getDynamicData('__cityList','','0','/base/list/city','city',[],this)"
@@ -90,11 +86,7 @@
                                md-maxlength="100"
                                name="address"
                                required>
-                        <label ng-if="Form.addressType==null">{{'WORKPLACE_MAIN_ADDRESS'| translate }}</label>
-                        <label ng-if="Form.addressType==19">{{'OFFICE_MAIN_ADDRESS'| translate }}</label>
-                        <label ng-if="Form.addressType==21">{{'CLINIC_MAIN_ADDRESS'| translate }}</label>
-                        <label ng-if="Form.addressType==22">{{'HOSPITAL_MAIN_ADDRESS'| translate }}</label>
-                        <label ng-if="Form.addressType==23">{{'DOCTORS_BUILDING_MAIN_ADDRESS'| translate }}</label>
+                        <label>{{labelTxt2}}</label>
                         <div class="hint">{{'' | translate }}</div>
                         <div ng-messages="formData.address.$error" role="alert">
                             <div ng-message="required" class="my-message">

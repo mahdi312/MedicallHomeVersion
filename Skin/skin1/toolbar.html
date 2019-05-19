@@ -1,7 +1,7 @@
 <div ng-include="skinPath+'toolbar/navBar.html?r='+rand"></div>
 <div oc-lazy-load="{ name: 'YourApp', files: [skinPath+'css/toolbar.css?r='+rand] }">
-<md-toolbar flex="100" id="patiantDBToolbar" style="background-color: #00c6d7 !important;height: 45px !important;" layout="row" layout-aling="space-between center">
-	<div layout="row" class="toolBarBack" style="width:100%" >
+<md-toolbar flex="100" id="patiantDBToolbar" style="background-color: {{toolbarColor}} !important;height: 45px !important;" layout="row" layout-aling="space-between center">
+	<div layout="row" style="width:100%" >
 		<div layout="row" layout-align="start center" class="part1">
 			<!--logo-->
 			<div ng-include="skinPath+'toolbar/logo.html?r='+rand"></div>
@@ -12,12 +12,14 @@
 			<div ng-include="skinPath+'toolbar/sideNav.html?r='+rand"></div>
 			<!--sideNav-->		
 		</div>
-		<div  flex="100" layout="row" layout-align="end center" class="part2">
+		<div ng-include="skinPath+'toolbar/account.html?r='+rand"></div>
+		<div flex="100" layout="row" layout-align="center center" ng-include="skinPath+'toolbar/dateAndTime.html?r='+rand"></div>
+		<div  flex="10" layout="row" layout-align="end center" class="part2">
 			<!-- SEARCH -->			
 			<div ng-if="dashboardName=='patientDashboard'" ng-include="skinPath+'toolbar/search.html?r='+rand"></div>
 			<!-- SEARCH -->
 			<!-- Exit -->
-			<div ng-include="skinPath+'toolbar/exit.html?r='+rand"></div>
+			<div ng-if="dashboardName!='mainDashboard'" ng-include="skinPath+'toolbar/exit.html?r='+rand"></div>
 			<!-- BEGIN USER ACCOUNT
 			<div ng-include="skinPath+'toolbar/account.html?r='+rand"></div>
 			END USER ACCOUNT -->
